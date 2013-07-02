@@ -1,0 +1,59 @@
+﻿@using System.Collections
+@using System.Data
+@using Kendo.Mvc.UI
+@model SPCASW.Web.Models.CampaignsViewModel
+@{
+    ViewBag.Title = "Campaigns";
+}
+
+<h2>Campaigns</h2>
+
+<div id="campaignGrid">
+@if (Model.Campaigns != null && Model.Campaigns.Count > 0)
+{
+   @(Html.Kendo().Grid(Model.Campaigns)
+       .Name("Grid")
+       .Columns(columns =>
+          {
+             columns.Bound(m => m.CampaignName).Title("Campaign Name");
+             columns.Bound(m => m.CampaignRecipients.Count).Title("# Recipients");
+             columns.Command(cmd => cmd.Custom("Details").Text("Details").Action("Details", "Campaigns").DataRouteValues(v => v.Add(c => c.CampaignID).RouteKey("id")));
+             columns.Command(cmd => cmd.Custom("Export").Text("CVS Export").Action("ExportCsv", "Campaigns").DataRouteValues(v => v.Add(c => c.CampaignID).RouteKey("id")));
+			 columns.ForeignKey(p => p.CreatedBy, (System.Collections.IEnumerable)ViewData["users"], "ProviderUserKey", "UserName").Width(110);
+			 columns.Template(@<text> @Html.Label(@item.CreatedOn == null ? String.Empty : @item.CreatedOn.Value.ToShortDateString())</text>).Width(130).Title("Created On");
+
+
+		  }).Resizable(resize => resize.Columns(true))
+						 .Scrollable()
+         .Pageable()
+         .Sortable()
+         .Filterable()
+						 .DataSource(dataSource => dataSource
+          .Server()
+							.Model(model => model.Id(p => p.CampaignID))
+							.Read(read => read.Action("Index", "Campaigns"))
+							.Create(create => create.Action("Create", "Campaigns"))
+          .Sort(sort => sort.Add(o => o.CreatedBy).Descending())
+          .Update("Update", "Campaigns")
+      ))
+
+} //end if
+else
+{
+   <p>There are currently no campaigns.</p>
+}
+</div>
+<div class="k-button k-button-icontext k-grid-update">@Html.ActionLink("Add a campaign", "Create", null, new{@class="actionLinkButton"})</div>
+
+<script type="text/javascript">
+    $(function () {
+        $('#campaignGrid').on('click', '.spca-delete', function (e) {
+        
+            if (!confirm('Are you sure you want to delete this campaign?')) {
+                e.preventDefault();
+                return false;
+            }
+            
+        });
+    });
+</script>

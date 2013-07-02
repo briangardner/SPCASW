@@ -1,0 +1,15 @@
+D:\SPCASW\SPCASW\SPCASW.Marketing\bin\Debug\SPCASW.Marketing.dll
+D:\SPCASW\SPCASW\SPCASW.Marketing\bin\Debug\SPCASW.Marketing.pdb
+D:\SPCASW\SPCASW\SPCASW.Marketing\bin\Debug\FileHelpers.DataLink.dll
+D:\SPCASW\SPCASW\SPCASW.Marketing\bin\Debug\FileHelpers.dll
+D:\SPCASW\SPCASW\SPCASW.Marketing\bin\Debug\FileHelpers.ExcelStorage.dll
+D:\SPCASW\SPCASW\SPCASW.Marketing\bin\Debug\SPCASW.Common.dll
+D:\SPCASW\SPCASW\SPCASW.Marketing\bin\Debug\SPCASW.Data.dll
+D:\SPCASW\SPCASW\SPCASW.Marketing\bin\Debug\SPCASW.Common.pdb
+D:\SPCASW\SPCASW\SPCASW.Marketing\bin\Debug\SPCASW.Data.pdb
+D:\SPCASW\SPCASW\SPCASW.Marketing\bin\Debug\FileHelpers.xml
+D:\SPCASW\SPCASW\SPCASW.Marketing\bin\Debug\FileHelpers.DataLink.xml
+D:\SPCASW\SPCASW\SPCASW.Marketing\bin\Debug\FileHelpers.ExcelStorage.xml
+D:\SPCASW\SPCASW\SPCASW.Marketing\obj\Debug\SPCASW.Marketing.csprojResolveAssemblyReference.cache
+D:\SPCASW\SPCASW\SPCASW.Marketing\obj\Debug\SPCASW.Marketing.dll
+D:\SPCASW\SPCASW\SPCASW.Marketing\obj\Debug\SPCASW.Marketing.pdb

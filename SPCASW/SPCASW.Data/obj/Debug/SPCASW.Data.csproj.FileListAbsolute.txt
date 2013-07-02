@@ -1,0 +1,7 @@
+D:\SPCASW\SPCASW\SPCASW.Data\bin\Debug\SPCASW.Data.dll
+D:\SPCASW\SPCASW\SPCASW.Data\bin\Debug\SPCASW.Data.pdb
+D:\SPCASW\SPCASW\SPCASW.Data\bin\Debug\SPCASW.Common.dll
+D:\SPCASW\SPCASW\SPCASW.Data\bin\Debug\SPCASW.Common.pdb
+D:\SPCASW\SPCASW\SPCASW.Data\obj\Debug\SPCASW.Data.csprojResolveAssemblyReference.cache
+D:\SPCASW\SPCASW\SPCASW.Data\obj\Debug\SPCASW.Data.dll
+D:\SPCASW\SPCASW\SPCASW.Data\obj\Debug\SPCASW.Data.pdb

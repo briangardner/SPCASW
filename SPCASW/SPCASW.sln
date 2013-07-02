@@ -1,0 +1,86 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F5C4CE17-CFD4-4071-8D60-BF1DDC804471}"
+	ProjectSection(SolutionItems) = preProject
+		SolutionInfo.cs = SolutionInfo.cs
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPCASW.Web", "SPCASW.Web\SPCASW.Web.csproj", "{9930AFF3-3F5F-416D-84F1-C7D3F4E4B422}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPCASW.Tests", "SPCASW.Tests\SPCASW.Tests.csproj", "{0041B9EB-D010-4DBD-BFEF-F81DD917054D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPCASW.Common", "SPCASW.Common\SPCASW.Common.csproj", "{A1E75DA8-7756-48B3-BFB0-ADD89BA6C312}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPCASW.Data", "SPCASW.Data\SPCASW.Data.csproj", "{5589C445-06A8-4EDB-9E4A-8E3F79DE1CC3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPCASW.Marketing", "SPCASW.Marketing\SPCASW.Marketing.csproj", "{012125D2-8ED8-4856-8A7B-704E57F7F3FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPCASW.PetPoint", "SPCASW.PetPoint\SPCASW.PetPoint.csproj", "{77DD300A-AA51-489D-8C33-8078D46CB8FC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{4D40F44C-A8E0-42A1-B60A-43A8F6461922}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 7
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs08
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = SPCASW.Common\\SPCASW.Common.csproj
+		SccProjectName1 = SPCASW.Common
+		SccLocalPath1 = SPCASW.Common
+		SccProjectUniqueName2 = SPCASW.Data\\SPCASW.Data.csproj
+		SccProjectName2 = SPCASW.Data
+		SccLocalPath2 = SPCASW.Data
+		SccProjectUniqueName3 = SPCASW.Marketing\\SPCASW.Marketing.csproj
+		SccProjectName3 = SPCASW.Marketing
+		SccLocalPath3 = SPCASW.Marketing
+		SccProjectUniqueName4 = SPCASW.Tests\\SPCASW.Tests.csproj
+		SccProjectName4 = SPCASW.Tests
+		SccLocalPath4 = SPCASW.Tests
+		SccProjectUniqueName5 = SPCASW.Web\\SPCASW.Web.csproj
+		SccProjectName5 = SPCASW.Web
+		SccLocalPath5 = SPCASW.Web
+		SccProjectUniqueName6 = SPCASW.PetPoint\\SPCASW.PetPoint.csproj
+		SccProjectName6 = SPCASW.PetPoint
+		SccLocalPath6 = SPCASW.PetPoint
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9930AFF3-3F5F-416D-84F1-C7D3F4E4B422}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9930AFF3-3F5F-416D-84F1-C7D3F4E4B422}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9930AFF3-3F5F-416D-84F1-C7D3F4E4B422}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9930AFF3-3F5F-416D-84F1-C7D3F4E4B422}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0041B9EB-D010-4DBD-BFEF-F81DD917054D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0041B9EB-D010-4DBD-BFEF-F81DD917054D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0041B9EB-D010-4DBD-BFEF-F81DD917054D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0041B9EB-D010-4DBD-BFEF-F81DD917054D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1E75DA8-7756-48B3-BFB0-ADD89BA6C312}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1E75DA8-7756-48B3-BFB0-ADD89BA6C312}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1E75DA8-7756-48B3-BFB0-ADD89BA6C312}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1E75DA8-7756-48B3-BFB0-ADD89BA6C312}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5589C445-06A8-4EDB-9E4A-8E3F79DE1CC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5589C445-06A8-4EDB-9E4A-8E3F79DE1CC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5589C445-06A8-4EDB-9E4A-8E3F79DE1CC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5589C445-06A8-4EDB-9E4A-8E3F79DE1CC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{012125D2-8ED8-4856-8A7B-704E57F7F3FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{012125D2-8ED8-4856-8A7B-704E57F7F3FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{012125D2-8ED8-4856-8A7B-704E57F7F3FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{012125D2-8ED8-4856-8A7B-704E57F7F3FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77DD300A-AA51-489D-8C33-8078D46CB8FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77DD300A-AA51-489D-8C33-8078D46CB8FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77DD300A-AA51-489D-8C33-8078D46CB8FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77DD300A-AA51-489D-8C33-8078D46CB8FC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

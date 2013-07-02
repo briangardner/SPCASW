@@ -1,0 +1,60 @@
+﻿@using System.Collections
+@using System.Data
+@using Kendo.Mvc.UI
+@model SPCASW.Web.Models.CampaignViewModel
+@{
+    ViewBag.Title = "NewCampaign";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>New Campaign</h2>
+@using (Html.BeginForm())
+{
+   <label>Campaign name:</label>
+   @Html.TextBox("CampaignName")
+
+   if (Model.Contacts != null && Model.Contacts.Count > 0)
+   {
+   <br />
+      <p>Include contact groups:
+         @Html.CheckBox("VolunteerGroup")
+         <label for="volunteers">Volunteers</label>
+
+         @Html.CheckBox("DonorGroup")
+         <label for="donors">Donors</label>
+            
+         @Html.CheckBox("AdopterGroup")
+         <label for="adopters">Adopters</label>
+      </p>
+
+      <p>Also include these contacts:</p>
+      @(Html.Kendo().Grid(Model.Contacts)
+         .Name("Grid")
+         .Columns(columns =>
+            {
+               columns.Template(@<text><input type="checkbox" name="@("contact_" + item.ContactID)" /></text>).Width(50);
+               columns.Bound(p => p.FirstName).Title("First Name");
+               columns.Bound(p => p.LastName).Title("Last Name");
+               columns.Bound(p => p.EmailAddress).Title("Email");
+               //TODO: Make a column to say what type of contact they are
+
+            }).Resizable(resize => resize.Columns(true))
+         .Scrollable()
+         .Pageable()
+         .DataSource(dataSource => dataSource
+         .Server()
+         .Model(model => model.Id(p => p.ContactID))
+         .Read(read => read.Action("Create", "Campaigns"))
+      )
+   )
+
+   } //end if not null and greater than 0
+   else
+   {
+      <p>There are no contacts in the system.</p> 
+   }
+   <button class="k-button k-button-icontext k-grid-update" type="submit">
+   <span class="k-icon k-update"></span>Add Campaign</button>
+  
+}
+

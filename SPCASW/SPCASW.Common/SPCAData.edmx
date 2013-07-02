@@ -1,0 +1,388 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="SPCASW.Common.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="SPCASWCommonStoreContainer">
+          <EntitySet Name="CampaignRecipients" EntityType="SPCASW.Common.Store.CampaignRecipients" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Campaigns" EntityType="SPCASW.Common.Store.Campaigns" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Contacts" EntityType="SPCASW.Common.Store.Contacts" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Contacts_temp" EntityType="SPCASW.Common.Store.Contacts_temp" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_CampaignRecipients_CampaignID" Association="SPCASW.Common.Store.FK_CampaignRecipients_CampaignID">
+            <End Role="Campaigns" EntitySet="Campaigns" />
+            <End Role="CampaignRecipients" EntitySet="CampaignRecipients" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CampaignRecipients_ContactID" Association="SPCASW.Common.Store.FK_CampaignRecipients_ContactID">
+            <End Role="Contacts" EntitySet="Contacts" />
+            <End Role="CampaignRecipients" EntitySet="CampaignRecipients" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="CampaignRecipients">
+          <Key>
+            <PropertyRef Name="CampaignRecipientID" />
+          </Key>
+          <Property Name="CampaignRecipientID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CampaignID" Type="int" Nullable="false" />
+          <Property Name="ContactID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Campaigns">
+          <Key>
+            <PropertyRef Name="CampaignID" />
+          </Key>
+          <Property Name="CampaignID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CampaignName" Type="varchar" MaxLength="100" />
+          <Property Name="CreatedBy" Type="uniqueidentifier" />
+          <Property Name="CreatedOn" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Contacts">
+          <Key>
+            <PropertyRef Name="ContactID" />
+          </Key>
+          <Property Name="ContactID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="varchar" MaxLength="100" />
+          <Property Name="LastName" Type="varchar" MaxLength="100" />
+          <Property Name="EmailAddress" Type="varchar" MaxLength="128" />
+          <Property Name="IsVolunteer" Type="bit" Nullable="false" />
+          <Property Name="IsDonor" Type="bit" Nullable="false" />
+          <Property Name="IsAdopter" Type="bit" Nullable="false" />
+          <Property Name="StreetAddress1" Type="varchar" MaxLength="200" />
+          <Property Name="StreetAddress2" Type="varchar" MaxLength="200" />
+          <Property Name="City" Type="varchar" MaxLength="100" />
+          <Property Name="StateCode" Type="char" MaxLength="2" />
+          <Property Name="PostalCode" Type="varchar" MaxLength="10" />
+          <Property Name="Phone1" Type="varchar" MaxLength="30" />
+          <Property Name="PhoneType1" Type="char" MaxLength="1" />
+          <Property Name="Phone2" Type="varchar" MaxLength="30" />
+          <Property Name="PhoneType2" Type="char" MaxLength="1" />
+          <Property Name="Phone3" Type="varchar" MaxLength="30" />
+          <Property Name="PhoneType3" Type="char" MaxLength="1" />
+          <Property Name="Phone4" Type="varchar" MaxLength="30" />
+          <Property Name="PhoneType4" Type="char" MaxLength="1" />
+          <Property Name="IsEmailAllowed" Type="bit" Nullable="false" />
+          <Property Name="IsMailAllowed" Type="bit" Nullable="false" />
+          <Property Name="IsMailAddressValid" Type="bit" Nullable="false" />
+          <Property Name="PetPointID" Type="varchar" MaxLength="50" />
+          <Property Name="CreatedBy" Type="uniqueidentifier" />
+          <Property Name="CreatedOn" Type="datetime" />
+          <Property Name="ModifiedBy" Type="uniqueidentifier" />
+          <Property Name="ModifiedOn" Type="datetime" />
+          <Property Name="Notes" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="Contacts_temp">
+          <Key>
+            <PropertyRef Name="ContactID" />
+          </Key>
+          <Property Name="ContactID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="varchar" MaxLength="100" />
+          <Property Name="LastName" Type="varchar" MaxLength="100" />
+          <Property Name="EmailAddress" Type="varchar" MaxLength="128" />
+          <Property Name="IsVolunteer" Type="bit" Nullable="false" />
+          <Property Name="IsDonor" Type="bit" Nullable="false" />
+          <Property Name="IsAdopter" Type="bit" Nullable="false" />
+          <Property Name="StreetAddress1" Type="varchar" MaxLength="200" />
+          <Property Name="StreetAddress2" Type="varchar" MaxLength="200" />
+          <Property Name="City" Type="varchar" MaxLength="100" />
+          <Property Name="StateCode" Type="char" MaxLength="2" />
+          <Property Name="PostalCode" Type="varchar" MaxLength="10" />
+          <Property Name="Phone1" Type="varchar" MaxLength="30" />
+          <Property Name="PhoneType1" Type="char" MaxLength="1" />
+          <Property Name="Phone2" Type="varchar" MaxLength="30" />
+          <Property Name="PhoneType2" Type="char" MaxLength="1" />
+          <Property Name="Phone3" Type="varchar" MaxLength="30" />
+          <Property Name="PhoneType3" Type="char" MaxLength="1" />
+          <Property Name="Phone4" Type="varchar" MaxLength="30" />
+          <Property Name="PhoneType4" Type="char" MaxLength="1" />
+          <Property Name="IsEmailAllowed" Type="bit" Nullable="false" />
+          <Property Name="IsMailAllowed" Type="bit" Nullable="false" />
+          <Property Name="IsMailAddressValid" Type="bit" Nullable="false" />
+          <Property Name="PetPointID" Type="varchar" MaxLength="50" />
+          <Property Name="CreatedBy" Type="uniqueidentifier" />
+          <Property Name="CreatedOn" Type="datetime" />
+          <Property Name="Notes" Type="varchar(max)" />
+        </EntityType>
+        <Association Name="FK_CampaignRecipients_CampaignID">
+          <End Role="Campaigns" Type="SPCASW.Common.Store.Campaigns" Multiplicity="1" />
+          <End Role="CampaignRecipients" Type="SPCASW.Common.Store.CampaignRecipients" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Campaigns">
+              <PropertyRef Name="CampaignID" />
+            </Principal>
+            <Dependent Role="CampaignRecipients">
+              <PropertyRef Name="CampaignID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CampaignRecipients_ContactID">
+          <End Role="Contacts" Type="SPCASW.Common.Store.Contacts" Multiplicity="1" />
+          <End Role="CampaignRecipients" Type="SPCASW.Common.Store.CampaignRecipients" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contacts">
+              <PropertyRef Name="ContactID" />
+            </Principal>
+            <Dependent Role="CampaignRecipients">
+              <PropertyRef Name="ContactID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SPCASW.Common" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="SPCAContactsEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CampaignRecipients" EntityType="SPCASW.Common.CampaignRecipient" />
+          <EntitySet Name="Campaigns" EntityType="SPCASW.Common.Campaign" />
+          <EntitySet Name="Contacts" EntityType="SPCASW.Common.Contact" />
+          <AssociationSet Name="FK_CampaignRecipients_CampaignID" Association="SPCASW.Common.FK_CampaignRecipients_CampaignID">
+            <End Role="Campaigns" EntitySet="Campaigns" />
+            <End Role="CampaignRecipients" EntitySet="CampaignRecipients" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CampaignRecipients_ContactID" Association="SPCASW.Common.FK_CampaignRecipients_ContactID">
+            <End Role="Contacts" EntitySet="Contacts" />
+            <End Role="CampaignRecipients" EntitySet="CampaignRecipients" />
+          </AssociationSet>
+          <EntitySet Name="Contacts_temp" EntityType="SPCASW.Common.Contacts_temp" />
+        </EntityContainer>
+        <EntityType Name="CampaignRecipient">
+          <Key>
+            <PropertyRef Name="CampaignRecipientID" />
+          </Key>
+          <Property Name="CampaignRecipientID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CampaignID" Type="Int32" Nullable="false" />
+          <Property Name="ContactID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Campaign" Relationship="SPCASW.Common.FK_CampaignRecipients_CampaignID" FromRole="CampaignRecipients" ToRole="Campaigns" />
+          <NavigationProperty Name="Contact" Relationship="SPCASW.Common.FK_CampaignRecipients_ContactID" FromRole="CampaignRecipients" ToRole="Contacts" />
+        </EntityType>
+        <EntityType Name="Campaign">
+          <Key>
+            <PropertyRef Name="CampaignID" />
+          </Key>
+          <Property Name="CampaignID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CampaignName" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="CreatedBy" Type="Guid" />
+          <Property Name="CreatedOn" Type="DateTime" />
+          <NavigationProperty Name="CampaignRecipients" Relationship="SPCASW.Common.FK_CampaignRecipients_CampaignID" FromRole="Campaigns" ToRole="CampaignRecipients" />
+        </EntityType>
+        <EntityType Name="Contact">
+          <Key>
+            <PropertyRef Name="ContactID" />
+          </Key>
+          <Property Name="ContactID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="LastName" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="EmailAddress" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="IsVolunteer" Type="Boolean" Nullable="false" />
+          <Property Name="IsDonor" Type="Boolean" Nullable="false" />
+          <Property Name="IsAdopter" Type="Boolean" Nullable="false" />
+          <Property Name="City" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="StateCode" Type="String" MaxLength="2" Unicode="false" FixedLength="true" />
+          <Property Name="PostalCode" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="IsEmailAllowed" Type="Boolean" Nullable="false" />
+          <Property Name="IsMailAllowed" Type="Boolean" Nullable="false" />
+          <Property Name="IsMailAddressValid" Type="Boolean" Nullable="false" />
+          <Property Name="PetPointID" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="CreatedBy" Type="Guid" />
+          <Property Name="CreatedOn" Type="DateTime" />
+          <NavigationProperty Name="CampaignRecipients" Relationship="SPCASW.Common.FK_CampaignRecipients_ContactID" FromRole="Contacts" ToRole="CampaignRecipients" />
+          <Property Type="String" Name="StreetAddress1" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="StreetAddress2" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Phone1" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PhoneType1" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="Phone2" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PhoneType2" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="Phone3" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PhoneType3" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="Phone4" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PhoneType4" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="Guid" Name="ModifiedBy" />
+          <Property Type="DateTime" Name="ModifiedOn" />
+          <Property Type="String" Name="Notes" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <Association Name="FK_CampaignRecipients_CampaignID">
+          <End Role="Campaigns" Type="SPCASW.Common.Campaign" Multiplicity="1" />
+          <End Role="CampaignRecipients" Type="SPCASW.Common.CampaignRecipient" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Campaigns">
+              <PropertyRef Name="CampaignID" />
+            </Principal>
+            <Dependent Role="CampaignRecipients">
+              <PropertyRef Name="CampaignID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CampaignRecipients_ContactID">
+          <End Role="Contacts" Type="SPCASW.Common.Contact" Multiplicity="1" />
+          <End Role="CampaignRecipients" Type="SPCASW.Common.CampaignRecipient" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contacts">
+              <PropertyRef Name="ContactID" />
+            </Principal>
+            <Dependent Role="CampaignRecipients">
+              <PropertyRef Name="ContactID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Contacts_temp">
+          <Key>
+            <PropertyRef Name="ContactID" />
+          </Key>
+          <Property Type="Int32" Name="ContactID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="FirstName" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="LastName" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="EmailAddress" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="IsVolunteer" Nullable="false" />
+          <Property Type="Boolean" Name="IsDonor" Nullable="false" />
+          <Property Type="Boolean" Name="IsAdopter" Nullable="false" />
+          <Property Type="String" Name="StreetAddress1" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="StreetAddress2" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="City" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="StateCode" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="PostalCode" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Phone1" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PhoneType1" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="Phone2" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PhoneType2" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="Phone3" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PhoneType3" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="Phone4" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PhoneType4" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="Boolean" Name="IsEmailAllowed" Nullable="false" />
+          <Property Type="Boolean" Name="IsMailAllowed" Nullable="false" />
+          <Property Type="Boolean" Name="IsMailAddressValid" Nullable="false" />
+          <Property Type="String" Name="PetPointID" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Guid" Name="CreatedBy" />
+          <Property Type="DateTime" Name="CreatedOn" />
+          <Property Type="String" Name="Notes" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SPCASWCommonStoreContainer" CdmEntityContainer="SPCAContactsEntities">
+          <EntitySetMapping Name="CampaignRecipients">
+            <EntityTypeMapping TypeName="SPCASW.Common.CampaignRecipient">
+              <MappingFragment StoreEntitySet="CampaignRecipients">
+                <ScalarProperty Name="CampaignRecipientID" ColumnName="CampaignRecipientID" />
+                <ScalarProperty Name="CampaignID" ColumnName="CampaignID" />
+                <ScalarProperty Name="ContactID" ColumnName="ContactID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Campaigns">
+            <EntityTypeMapping TypeName="SPCASW.Common.Campaign">
+              <MappingFragment StoreEntitySet="Campaigns">
+                <ScalarProperty Name="CampaignID" ColumnName="CampaignID" />
+                <ScalarProperty Name="CampaignName" ColumnName="CampaignName" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Contacts">
+            <EntityTypeMapping TypeName="SPCASW.Common.Contact">
+              <MappingFragment StoreEntitySet="Contacts">
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="PhoneType4" ColumnName="PhoneType4" />
+                <ScalarProperty Name="Phone4" ColumnName="Phone4" />
+                <ScalarProperty Name="PhoneType3" ColumnName="PhoneType3" />
+                <ScalarProperty Name="Phone3" ColumnName="Phone3" />
+                <ScalarProperty Name="PhoneType2" ColumnName="PhoneType2" />
+                <ScalarProperty Name="Phone2" ColumnName="Phone2" />
+                <ScalarProperty Name="PhoneType1" ColumnName="PhoneType1" />
+                <ScalarProperty Name="Phone1" ColumnName="Phone1" />
+                <ScalarProperty Name="StreetAddress2" ColumnName="StreetAddress2" />
+                <ScalarProperty Name="StreetAddress1" ColumnName="StreetAddress1" />
+                <ScalarProperty Name="ContactID" ColumnName="ContactID" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+                <ScalarProperty Name="IsVolunteer" ColumnName="IsVolunteer" />
+                <ScalarProperty Name="IsDonor" ColumnName="IsDonor" />
+                <ScalarProperty Name="IsAdopter" ColumnName="IsAdopter" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="StateCode" ColumnName="StateCode" />
+                <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+                <ScalarProperty Name="IsEmailAllowed" ColumnName="IsEmailAllowed" />
+                <ScalarProperty Name="IsMailAllowed" ColumnName="IsMailAllowed" />
+                <ScalarProperty Name="IsMailAddressValid" ColumnName="IsMailAddressValid" />
+                <ScalarProperty Name="PetPointID" ColumnName="PetPointID" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Contacts_temp">
+            <EntityTypeMapping TypeName="SPCASW.Common.Contacts_temp">
+              <MappingFragment StoreEntitySet="Contacts_temp">
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="PetPointID" ColumnName="PetPointID" />
+                <ScalarProperty Name="IsMailAddressValid" ColumnName="IsMailAddressValid" />
+                <ScalarProperty Name="IsMailAllowed" ColumnName="IsMailAllowed" />
+                <ScalarProperty Name="IsEmailAllowed" ColumnName="IsEmailAllowed" />
+                <ScalarProperty Name="PhoneType4" ColumnName="PhoneType4" />
+                <ScalarProperty Name="Phone4" ColumnName="Phone4" />
+                <ScalarProperty Name="PhoneType3" ColumnName="PhoneType3" />
+                <ScalarProperty Name="Phone3" ColumnName="Phone3" />
+                <ScalarProperty Name="PhoneType2" ColumnName="PhoneType2" />
+                <ScalarProperty Name="Phone2" ColumnName="Phone2" />
+                <ScalarProperty Name="PhoneType1" ColumnName="PhoneType1" />
+                <ScalarProperty Name="Phone1" ColumnName="Phone1" />
+                <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+                <ScalarProperty Name="StateCode" ColumnName="StateCode" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="StreetAddress2" ColumnName="StreetAddress2" />
+                <ScalarProperty Name="StreetAddress1" ColumnName="StreetAddress1" />
+                <ScalarProperty Name="IsAdopter" ColumnName="IsAdopter" />
+                <ScalarProperty Name="IsDonor" ColumnName="IsDonor" />
+                <ScalarProperty Name="IsVolunteer" ColumnName="IsVolunteer" />
+                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="ContactID" ColumnName="ContactID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="SPCAData" ZoomLevel="109">
+        <EntityTypeShape EntityType="SPCASW.Common.CampaignRecipient" Width="1.5" PointX="3" PointY="0.875" Height="1.9802864583333335" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPCASW.Common.Campaign" Width="1.5" PointX="0.75" PointY="0.875" Height="1.9802864583333335" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPCASW.Common.Contact" Width="1.5" PointX="0.75" PointY="7.375" Height="6.2109179687500014" IsExpanded="true" />
+        <AssociationConnector Association="SPCASW.Common.FK_CampaignRecipients_CampaignID" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="1.8651432291666668" />
+          <ConnectorPoint PointX="3" PointY="1.8651432291666668" />
+        </AssociationConnector>
+        <AssociationConnector Association="SPCASW.Common.FK_CampaignRecipients_ContactID" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="12.093120117187501" />
+          <ConnectorPoint PointX="3.15625" PointY="12.093120117187501" />
+          <ConnectorPoint PointX="3.15625" PointY="2.8552864583333335" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="SPCASW.Common.Contacts_temp" Width="1.5" PointX="3.375" PointY="3.75" Height="6.21091796875" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

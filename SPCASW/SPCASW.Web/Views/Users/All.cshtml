@@ -1,0 +1,37 @@
+﻿@using SPCASW.Web.Security
+@model IEnumerable<SPCASW.Web.Models.UserViewModel>
+<div class="k-grid k-widget">
+   <table id="userGrid">
+      <thead class="k-grid-header k-grid-header-wrap">
+         <tr>
+            <th class="k-header">Username</th>
+            <th class="k-header">Approved ?</th>
+            <th class="k-header">Email</th>
+            <th class="k-header">Roles</th>
+            <th class="k-header"></th>
+         </tr>
+      </thead>
+      <tfoot></tfoot>
+      <tbody class="k-grid-content">
+         @{ var i = 0; }
+         @foreach (var m in Model)
+         {
+            var altClass = i%2 == 0 ? "" : "k-alt";
+            <tr class="@altClass">
+               <td>@m.Username</td>
+               <td>@(m.IsApproved ? "Approved" : "")</td>
+               <td>@m.Email</td>
+               <td>@String.Join(", ", m.Roles.Select(UserRoles.FriendlyName))</td>
+               <td>
+                  @Html.BuildActionLink("Edit", "Edit", new {username = m.Username}).AddClass("k-button spca-edit")
+                  @if( m.IsLockedOut )
+                  {
+                     @Html.BuildActionLink("Unlock", "Unlock", new {username = m.Username}).AddClass("k-button spca-unlock")
+                  }
+               </td>
+            </tr>
+            i++;
+         }
+      </tbody>
+   </table>
+</div>

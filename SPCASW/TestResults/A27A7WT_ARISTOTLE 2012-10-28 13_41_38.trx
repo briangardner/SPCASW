@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="04612d61-92c3-40b2-8e62-e6fa2caa8d64" name="A27A7WT@ARISTOTLE 2012-10-28 13:41:38" runUser="GEAEAVSYS\A27A7WT" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Default Test Settings" id="bfe0a471-0d61-4ea5-9170-f25183b4e76e">
+    <Deployment runDeploymentRoot="A27A7WT_ARISTOTLE 2012-10-28 13_41_38">
+      <DeploymentItem filename="D:\SPCASW\SPCASW\packages\EntityFramework.4.1.10331.0\lib\EntityFramework.dll" />
+      <DeploymentItem filename="D:\SPCASW\SPCASW\SPCASW.Data\bin\Debug\SPCASW.Data.dll" />
+      <DeploymentItem filename="D:\SPCASW\SPCASW\SPCASW.Common\bin\Debug\SPCASW.Common.dll" />
+      <DeploymentItem filename="D:\SPCASW\SPCASW\SPCASW.Marketing\bin\Debug\SPCASW.Marketing.dll" />
+      <DeploymentItem filename="D:\SPCASW\SPCASW\SPCASW.PetPoint\bin\Debug\SPCASW.PetPoint.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2012-10-28T13:41:38.2129793-04:00" queuing="2012-10-28T13:41:45.8354152-04:00" start="2012-10-28T13:41:46.3754461-04:00" finish="2012-10-28T13:41:57.7470965-04:00" />
+  <ResultSummary outcome="Error">
+    <Counters total="4" executed="2" passed="1" error="0" failed="0" timeout="0" aborted="1" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="2" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <RunInfos>
+      <RunInfo computerName="ARISTOTLE" outcome="Error" timestamp="2012-10-28T13:41:57.7460965-04:00">
+        <Text>Test host process exited unexpectedly.</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="ConstantContactFileEngineTest" storage="d:\spcasw\spcasw\spcasw.tests\bin\debug\spcasw.tests.dll" id="f0277562-6909-27bf-fb46-5bd88986d248">
+      <Execution id="ec6bdad2-3d12-4179-979e-dae7823e2dcb" />
+      <TestMethod codeBase="D:/SPCASW/SPCASW/SPCASW.Tests/bin/Debug/SPCASW.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="SPCASW.Tests.ConstantContactFileEngineTests, SPCASW.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="ConstantContactFileEngineTest" />
+    </UnitTest>
+    <UnitTest name="LoadData" storage="d:\spcasw\spcasw\spcasw.tests\bin\debug\spcasw.tests.dll" id="12a5c15c-67f7-d728-c2f3-ae15c1da0fe4">
+      <Execution id="4fcf43d2-f55b-4f2b-bcff-43e6c92d9d57" />
+      <TestMethod codeBase="D:/SPCASW/SPCASW/SPCASW.Tests/bin/Debug/SPCASW.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="SPCASW.Tests.Controllers.LoadPetPointData, SPCASW.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="LoadData" />
+    </UnitTest>
+    <UnitTest name="Index" storage="d:\spcasw\spcasw\spcasw.tests\bin\debug\spcasw.tests.dll" id="217d2fdc-d7cf-9de6-0a0a-d3862381f0a4">
+      <Execution id="8f43af54-3af5-4aa2-9e6e-07ac34b872a6" />
+      <TestMethod codeBase="D:/SPCASW/SPCASW/SPCASW.Tests/bin/Debug/SPCASW.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="SPCASW.Tests.Controllers.HomeControllerTest, SPCASW.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="Index" />
+    </UnitTest>
+    <UnitTest name="BuildXMLContacts" storage="d:\spcasw\spcasw\spcasw.tests\bin\debug\spcasw.tests.dll" id="7374743f-7233-c344-bbdd-0ead29670033">
+      <Execution id="f833d090-37c2-423e-8fbf-97564bf07e17" />
+      <TestMethod codeBase="D:/SPCASW/SPCASW/SPCASW.Tests/bin/Debug/SPCASW.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="SPCASW.Tests.Controllers.LoadXMLContacts, SPCASW.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="BuildXMLContacts" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="217d2fdc-d7cf-9de6-0a0a-d3862381f0a4" executionId="8f43af54-3af5-4aa2-9e6e-07ac34b872a6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="12a5c15c-67f7-d728-c2f3-ae15c1da0fe4" executionId="4fcf43d2-f55b-4f2b-bcff-43e6c92d9d57" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7374743f-7233-c344-bbdd-0ead29670033" executionId="f833d090-37c2-423e-8fbf-97564bf07e17" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f0277562-6909-27bf-fb46-5bd88986d248" executionId="ec6bdad2-3d12-4179-979e-dae7823e2dcb" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="8f43af54-3af5-4aa2-9e6e-07ac34b872a6" testId="217d2fdc-d7cf-9de6-0a0a-d3862381f0a4" testName="Index" computerName="ARISTOTLE" duration="00:00:00.0098680" startTime="2012-10-28T13:41:46.7344667-04:00" endTime="2012-10-28T13:41:48.7205803-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8f43af54-3af5-4aa2-9e6e-07ac34b872a6">
+    </UnitTestResult>
+    <UnitTestResult executionId="4fcf43d2-f55b-4f2b-bcff-43e6c92d9d57" testId="12a5c15c-67f7-d728-c2f3-ae15c1da0fe4" testName="LoadData" computerName="ARISTOTLE" duration="00:00:09.0175157" startTime="2012-10-28T13:41:48.7295808-04:00" endTime="2012-10-28T13:41:57.7470965-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Aborted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4fcf43d2-f55b-4f2b-bcff-43e6c92d9d57">
+    </UnitTestResult>
+    <UnitTestResult executionId="f833d090-37c2-423e-8fbf-97564bf07e17" testId="7374743f-7233-c344-bbdd-0ead29670033" testName="BuildXMLContacts" computerName="ARISTOTLE" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f833d090-37c2-423e-8fbf-97564bf07e17">
+    </UnitTestResult>
+    <UnitTestResult executionId="ec6bdad2-3d12-4179-979e-dae7823e2dcb" testId="f0277562-6909-27bf-fb46-5bd88986d248" testName="ConstantContactFileEngineTest" computerName="ARISTOTLE" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ec6bdad2-3d12-4179-979e-dae7823e2dcb">
+    </UnitTestResult>
+  </Results>
+</TestRun>

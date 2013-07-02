@@ -1,0 +1,8 @@
+﻿@if( Request.IsAuthenticated )
+{
+   @Html.ActionLink( "Change Password", "ChangePassword", "Account" ) <text>|</text> @Html.ActionLink( string.Format( "Sign Out ({0})", User.Identity.Name ), "SignOut", "Account" )
+}
+else
+{
+   @Html.ActionLink( "Sign In", "SignIn", "Account" )
+}

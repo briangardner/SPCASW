@@ -1,0 +1,34 @@
+﻿body { background: #aaa;height: 100%; font: normal 1em Verdana, Tahoma, Arial, sans-serif }
+.wrapper { background: #fff;margin: 0 auto;padding: 15px;min-width: 1000px;}
+.row { background: #fff;}
+#nav{ }
+.footer{ padding: 15px 0}
+.text-left { text-align: left;}
+.text-right {text-align: right}
+.text-center {text-align: center}
+.fl {float: left}
+.fr {float:right}
+.actionLinkButton {text-decoration: none}
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+.cf:after {
+    clear: both;
+}
+.cf {
+    *zoom: 1;
+}
+
+
+#search 
+{
+   padding: 10px; 
+}
+#btnseach
+{
+    float: right;
+}
+.green {color: green}
+.red {color: red}

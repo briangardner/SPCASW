@@ -1,0 +1,194 @@
+﻿@model SPCASW.Common.Contact
+@{
+    ViewBag.Title = "Details";
+}
+@using(Html.BeginForm("Save", "Contacts"))
+{
+    @Html.HiddenFor(m => m.ContactID)
+    <div class="cf">
+        <h4>
+            Contact Information</h4>
+    </div>
+    <div class="cf">
+        <div class="fl" style="width:49%">
+            <div class="editor-label">
+                @Html.LabelFor(m => m.FirstName)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(m => m.FirstName)
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(m => m.LastName)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(m => m.LastName)
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(m => m.StreetAddress1)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(m => m.StreetAddress1)
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(m => m.StreetAddress2)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(m => m.StreetAddress2)
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(m => m.City)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(m => m.City)
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(m => m.StateCode)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(m => m.StateCode)
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(m => m.PostalCode)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(m => m.PostalCode)
+            </div>
+        </div>
+        <div class="fl" style="width:49%">
+            <div class="editor-label">
+                @Html.LabelFor(m => m.EmailAddress)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(m => m.EmailAddress)
+            </div>
+            <div class="editor-label">
+                @Html.Label("Phone1", Model.PhoneType1)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(m => m.Phone1)
+            </div>
+            <div class="editor-label">
+                @Html.Label("Phone2", Model.PhoneType2)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(m => m.Phone2)
+            </div>
+            <div class="editor-label">
+                @Html.Label("Phone3", Model.PhoneType3)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(m => m.Phone3)
+            </div>
+            <div class="editor-label">
+                @Html.Label("Phone4", Model.PhoneType4)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(m => m.Phone4)
+            </div>
+            <div class="editor-label">
+            </div>
+            <div class="editor-field">
+                <label>
+                    @Html.CheckBoxFor(m => m.IsEmailAllowed)
+                    Email Allowed
+                </label>
+            </div>
+            <div class="editor-label">
+            </div>
+            <div class="editor-field">
+                <label>
+                    @Html.CheckBoxFor(m => m.IsMailAllowed)
+                    Mail Allowed
+                </label>
+            </div>
+            <div class="editor-label">
+            </div>
+            <div class="editor-field">
+                <label>
+                    @Html.CheckBoxFor(m => m.IsMailAddressValid)
+                    Mail Address Is Valid
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="cf">
+        <h4>
+            SPCA Information</h4>
+    </div>
+    <div class="cf">
+        <div class="fl" style="width:49%">
+            <div class="editor-label">
+            </div>
+            <div class="editor-field">
+                <label>
+                    @Html.CheckBoxFor(m => m.IsAdopter)
+                    Adopter
+                </label>
+            </div>
+            <div class="editor-label">
+            </div>
+            <div class="editor-field">
+                <label>
+                    @Html.CheckBoxFor(m => m.IsDonor)
+                    Donor
+                </label>
+            </div>
+            <div class="editor-label">
+            </div>
+            <div class="editor-field">
+                <label>
+                    @Html.CheckBoxFor(m => m.IsVolunteer)
+                    Volunteer
+                </label>
+            </div>
+        </div>
+        <div class="fl" style="width:49%">
+            <div class="editor-label">
+                PetPoint ID
+            </div>
+            <div class="editor-field">
+                @Model.PetPointID
+            </div>
+            <div class="editor-label">
+                Created
+            </div>
+            <div class="editor-field">
+                @Model.CreatedOn by
+                @if(Model.CreatedBy.HasValue)
+                {
+                    var creator = Membership.GetUser(Model.CreatedBy);
+                    @(creator != null ? creator.UserName : "Unknown")
+                }
+                else
+                {
+                    <text>Unknown</text>
+                }
+            </div>
+            <div class="editor-label">
+                Modified
+            </div>
+            <div class="editor-field">
+                @Model.ModifiedOn by
+                @if(Model.ModifiedBy.HasValue)
+                {
+                    var modifier = Membership.GetUser(Model.ModifiedBy);
+                    @(modifier != null ? modifier.UserName : "Unknown")
+                }
+                else
+                {
+                    <text>Unknown</text>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="cf" style="padding: 10px">
+        Notes<br/>
+        @Html.BuildTextAreaFor(m=>m.Notes).Attr("rows",5).Css("width","100%")
+    </div>
+    <div class="cf text-center" style="padding:10px;margin:10px;border:solid 2px green;font-size: larger">
+        @Html.BuildSubmitButton("Save").AddClass("k-button")
+    </div>
+    <div class="cf text-center">
+        @Html.BuildActionLink("Cancel").Attr("href", (string)ViewBag.ReturnUrl)
+    </div>
+}

@@ -1,0 +1,10 @@
+D:\SPCASW\SPCASW\SPCASW.PetPoint\bin\Debug\SPCASW.PetPoint.dll.config
+D:\SPCASW\SPCASW\SPCASW.PetPoint\bin\Debug\SPCASW.PetPoint.dll
+D:\SPCASW\SPCASW\SPCASW.PetPoint\bin\Debug\SPCASW.PetPoint.pdb
+D:\SPCASW\SPCASW\SPCASW.PetPoint\bin\Debug\SPCASW.Common.dll
+D:\SPCASW\SPCASW\SPCASW.PetPoint\bin\Debug\SPCASW.Common.pdb
+D:\SPCASW\SPCASW\SPCASW.PetPoint\obj\Debug\SPCASW.PetPoint.csprojResolveAssemblyReference.cache
+D:\SPCASW\SPCASW\SPCASW.PetPoint\obj\Debug\SPCASW.PetPoint.dll
+D:\SPCASW\SPCASW\SPCASW.PetPoint\obj\Debug\SPCASW.PetPoint.pdb
+D:\SPCASW\SPCASW\SPCASW.PetPoint\bin\Debug\EntityFramework.dll
+D:\SPCASW\SPCASW\SPCASW.PetPoint\bin\Debug\EntityFramework.xml

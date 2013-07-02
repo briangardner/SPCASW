@@ -1,0 +1,42 @@
+﻿@model SPCASW.Web.Models.LogOnModel
+
+@{
+    ViewBag.Title = "Sign In";
+}
+
+<h4>Sign In</h4>
+
+<script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.10.0/jquery.validate.min.js"></script>
+
+@Html.ValidationSummary(true, "Login was unsuccessful. Please correct the errors and try again.")
+
+@using (Html.BeginForm()) {
+	<div class="row">
+		<div class="three mobile-one columns">
+			@Html.BuildLabelFor(m=>m.UserName).AddClass("inline right")
+		</div>
+		<div class="nine mobile-three columns">
+			@Html.BuildTextBoxFor(m=>m.UserName).AddClass("seven required")
+		</div>
+	</div>
+	<div class="row">
+		<div class="three mobile-one columns">
+			@Html.BuildLabelFor(m=>m.Password).AddClass("inline right")
+		</div>
+		<div class="nine mobile-three columns">
+			@Html.BuildPasswordFor(m=>m.Password).AddClass("seven required")
+		</div>
+	</div>
+    <div class="row">
+		<div class="three mobile-one columns"></div>
+		<div class="nine mobile-three columns">
+			<label for="RememberMe"><input type="checkbox" id="RememberMe"> Remember me?</label>
+		</div>
+	</div>
+	<div class="row">
+		<div class="three mobile-one columns"></div>
+		<div class="nine mobile-three columns offset-by-three">
+			@Html.BuildSubmitButton("Sign In").AddClass("k-button")
+		</div>
+	</div>
+}

@@ -1,0 +1,90 @@
+﻿@model IEnumerable<SPCASW.Web.Models.UserViewModel>
+<h4>Users</h4>
+
+@Html.BuildActionLink("Add New User", "Register", "Account").AddClass("k-button")
+<br/><br/>
+   
+<div id="gridContainer" data-href="/Users/All">
+    @Html.Partial("All", Model)
+</div>
+
+<div id="window"></div>
+
+<script type="text/javascript">
+
+    $(function () {
+
+        $('#gridContainer').on('click', '.spca-edit', function (e) {
+            e.preventDefault();
+            openWindow($(this).attr('href'));
+        });
+
+        function openWindow(url) {
+
+            var uncachedUrl = url + (/\?/.test(url) ? '&_uc=' : '?_uc=') + new Date().getUTCMilliseconds().toString();
+
+            var window = $('#window');
+            if (!window.data('kendoWindow')) {
+                window.kendoWindow({
+                    width: '600px',
+                    title: 'Edit User',
+                    content: uncachedUrl,
+                    modal: true,
+                    close: reloadGrid,
+                    visible: false
+                }).data('kendoWindow').open().center();
+            } else {
+                window.data('kendoWindow').refresh(uncachedUrl).open().center();
+            }
+        }
+
+        function reloadGrid() {
+            var container = $('#gridContainer');
+            container.load(container.attr('data-href') + '?_uc=' + new Date().getUTCMilliseconds().toString());
+        }
+
+        $("form.k-edit-form").kendoValidator();
+
+        $('#gridContainer').on('click', '.spca-unlock', function (e) {
+
+            e.preventDefault();
+
+            $.ajax({
+                url: $(this).attr('href'),
+                type: 'POST',
+                success: reloadGrid
+            });
+        });
+
+        $('#window').on('click', '.spca-save', function (e) {
+            var form = $(this).closest('form'),
+                error = form.children('.error').html('');
+
+            e.preventDefault();
+
+            $.ajax({
+                url: form.attr('action'),
+                type: 'POST',
+                dataType: 'json',
+                data: form.serialize(),
+                success: function (data) {
+                    if (data.Success) {
+                        $('#window').data('kendoWindow').close();
+                        reloadGrid();
+                    } else {
+                        error.html("Error: " + data.Message);
+                    }
+                },
+                error: function (jqXhr, textStatus, errorThrown) {
+                    error.html("Error: " + textStatus + " - " + errorThrown);
+                }
+            });
+        });
+
+        $('#window').on('click', '.spca-close', function () {
+            $('#window').data('kendoWindow').close();
+        });
+
+    });
+
+</script>

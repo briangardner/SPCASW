@@ -1,0 +1,44 @@
+﻿@using SPCASW.Web.Security
+@model SPCASW.Web.Models.UserViewModel
+<form class="k-edit-form" method="POST" action="@Url.Action( "Save", "Users", new { username = Model.Username } )">
+   <div class="error"></div>
+   <div class="k-edit-form-container">
+      <div class="editor-label">
+         @Html.LabelFor( m => m.Username )
+      </div>
+      <div class="editor-field">
+         @Html.HiddenFor(m=>m.Username)
+         @Model.Username
+      </div>
+      <div class="editor-label">
+         </div>
+         <div class="editor-field">
+            <label>
+               @Html.BuildCheckBoxFor(m=>m.IsApproved).IsChecked(Model.IsApproved)
+               Approved
+            </label>
+         </div>
+      <div class="editor-label">
+         @Html.LabelFor( m => m.Email )
+      </div>
+      <div class="editor-field">
+         @Html.BuildTextBoxFor( m => m.Email ).Size(40)
+      </div>
+      @foreach( var role in Roles.GetAllRoles() )
+      {
+         <div class="editor-label">
+         </div>
+         <div class="editor-field">
+            <label>
+               @Html.BuildCheckBox( "Roles" ).Attr("value", role).IsChecked(Model.Roles.Contains(role))
+               @UserRoles.FriendlyName(role)
+            </label>
+         </div>
+      }
+      <div class="editor-label"></div>
+      <div class="editor-field">
+         @Html.BuildActionLink("Save","Save").AddClass("k-button spca-save")
+         <a href="#" class="k-button spca-close">Cancel</a>
+      </div>
+   </div>
+</form>

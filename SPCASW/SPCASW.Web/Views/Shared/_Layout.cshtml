@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="/Content/kendo/styles/kendo.common.css" rel="stylesheet" type="text/css" />
+    <link href="/Content/kendo/styles/kendo.silver.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/Content/stylesheets/app.css" />
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script src="/Content/kendo/js/kendo.web.js" type="text/javascript"></script>
+    <script src="/Content/kendo/js/kendo.grid.js" type="text/javascript"></script>
+    <script src="/Content/kendo/js/kendo.all.min.js" type="text/javascript"></script>
+    <script src="/Content/kendo/js/kendo.aspnetmvc.js" type="text/javascript"></script>
+    <script src="/Content/kendo/js/console.js"></script>
+</head>
+<body>
+    <div class="wrapper k-content">
+        <div id="header">
+            <div class="fr">@Html.Partial( "_SignInPartial" )</div>
+            <h3>
+                SPCA of Southwest Michigan - Contact Management System</h3>
+        </div>
+        @{ if( Request.IsAuthenticated )
+           {
+            <div id="nav">
+                @Html.Partial( "_Navigation" )
+            </div>     
+           }
+        }
+        @RenderBody()
+        <div class="footer text-center">
+            <img alt="SPCA logo" src="/Content/images/spcaLogo.jpg" /><br />
+            <small>Developed for SPCA of Southwest Michigan by GiveCamp GR 2012</small>
+        </div>
+    </div>
+    <script>
+        $(function () {
+            $('#menu').kendoMenu();
+
+            $('li.toggle-topbar').click(function () {
+                $(this).closest('nav').toggleClass('expanded');
+            });
+
+            $('li.page-link').has('a[href="' + location.pathname + '"]').addClass('k-state-default k-state-hover');
+        });
+    </script>
+</body>
+</html>

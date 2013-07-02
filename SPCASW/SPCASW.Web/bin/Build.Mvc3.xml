@@ -1,0 +1,787 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Build.Mvc3</name>
+    </assembly>
+    <members>
+        <member name="P:Build.Mvc.HtmlBuilderState.HtmlAttributes">
+            <summary>
+            Tracks the visible HTML attributes for the current builder instance.
+            </summary>
+        </member>
+        <member name="P:Build.Mvc.HtmlBuilderState.InstanceData">
+            <summary>
+            Tracks the non-visible state for the current builder instance.
+            </summary>
+        </member>
+        <member name="M:Build.Mvc.Html.NavigationExtensions.OpenInNewWindow``1(``0)">
+            <summary>
+            Sets the [target="_blank"] attribute
+            </summary>
+        </member>
+        <member name="M:Build.Mvc.FormInputExtensions.Named``1(``0,System.String)">
+            <summary>
+            Sets the name attribute.  If the id attribute is blank, then the id attribute is also set to the name.
+            </summary>
+            <typeparam name="TBuilder">The type of the builder.</typeparam>
+            <param name="instance">The instance.</param>
+            <param name="name">The name.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Build.Mvc.FormInputExtensions.Val(Build.Mvc.IFormInputBuilder)">
+            <summary>
+            Gets the value.
+            </summary>
+        </member>
+        <member name="M:Build.Mvc.FormInputExtensions.Val``1(``0,System.Object)">
+            <summary>
+            Sets the value for this control.
+            </summary>
+        </member>
+        <member name="M:Build.Mvc.FormInputExtensions.FormatVal``1(``0,System.String,System.Object[])">
+            <summary>
+            Sets the formatted value for this control.
+            </summary>
+            <typeparam name="TBuilder">The type of the builder.</typeparam>
+            <param name="instance">The instance.</param>
+            <param name="format">A composite format string.</param>
+            <param name="args">The args.</param>
+            <returns></returns>
+        </member>
+        <member name="F:Build.Mvc.ContentEditableOption.On">
+            <summary>
+            Specifies that the content should be editable
+            </summary>
+        </member>
+        <member name="F:Build.Mvc.ContentEditableOption.Off">
+            <summary>
+            Specifies that the content should not be editable
+            </summary>
+        </member>
+        <member name="F:Build.Mvc.ContentEditableOption.Inherit">
+            <summary>
+            Specifies that the content should be editable if the parent element is editable
+            </summary>
+        </member>
+        <member name="M:Build.Mvc.MultipleExtensions.Multiple``1(``0)">
+            <summary>
+            Enables multiple selection
+            </summary>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:Build.Mvc.DataBindExtensions.Bindings(System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Gets a collection of bindings.
+            </summary>
+        </member>
+        <member name="M:Build.Mvc.SpellCheckExtensions.SpellCheck``1(``0,Build.Mvc.SpellcheckMode)">
+            <summary>
+            Specifies if the element must have its spelling and grammar checked
+            </summary>
+        </member>
+        <member name="T:Build.Mvc.FormEncType">
+            <summary>
+            Defines the mime type used to encode the content of the form.
+            </summary>
+        </member>
+        <member name="F:Build.Mvc.FormEncType.FormUrlEncoded">
+            <summary>
+            application/x-www-form-urlencoded
+            </summary>
+        </member>
+        <member name="F:Build.Mvc.FormEncType.MultipartData">
+            <summary>
+            multipart/form-data
+            </summary>
+        </member>
+        <member name="F:Build.Mvc.FormEncType.TextPlain">
+            <summary>
+            text/plain 
+            </summary>
+        </member>
+        <member name="F:Build.Mvc.FormEncType.Default">
+            <summary>
+            application/x-www-form-urlencoded (Default)
+            </summary>
+        </member>
+        <member name="M:Build.Mvc.Html.LabelBuilderExtensions.For``1(``0,System.String)">
+            <summary>
+            Sets the "for" HTML Attribute
+            </summary>
+            <typeparam name="TBuilder">The type of the builder.</typeparam>
+            <param name="instance">The instance.</param>
+            <param name="associatedControlId">I think this is what they called it in the ASP.NET Web Forms days...</param>
+            <returns></returns>
+        </member>
+        <member name="M:Build.Mvc.ContentEditableExtensions.ContentEditable``1(``0,Build.Mvc.ContentEditableOption)">
+            <summary>
+            Specifies whether a user can edit the content of an element or not
+            </summary>
+        </member>
+        <member name="M:Build.Mvc.ClassNameExtensions.ClassNames(System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Gets a collection of class names.
+            </summary>
+        </member>
+        <member name="M:Build.Mvc.ClassNameExtensions.ContainsClass(System.Collections.Generic.IDictionary{System.String,System.Object},System.String)">
+            <summary>
+            Determines whether the specified dictionary contains a class attribute with the specified class name.
+            </summary>
+            <param name="dictionary">The dictionary.</param>
+            <param name="className">Name of the class.</param>
+            <returns>
+            <c>true</c> if the specified dictionary contains class; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Build.Mvc.ClassNameExtensions.InsertClass``1(``0,System.String[])">
+            <summary>
+            Inserts the specified class name(s) to the beginning of the class name collection.
+            </summary>
+        </member>
+        <member name="M:Build.Mvc.ClassNameExtensions.AddClass``1(``0,System.String[])">
+            <summary>
+            Adds the specified class name(s).
+            </summary>
+        </member>
+        <member name="M:Build.Mvc.ClassNameExtensions.RemoveClass``1(``0,System.String)">
+            <summary>
+            Removes the specified class name.
+            </summary>
+        </member>
+        <member name="M:Build.Mvc.ClassNameExtensions.InsertClassWhen``1(``0,System.Boolean,System.String[])">
+            <summary>
+            Inserts the specified class name(s) to the beginning of the class name collection only when the specified condition is true.
+            </summary>
+        </member>
+        <member name="M:Build.Mvc.ClassNameExtensions.AddClassWhen``1(``0,System.Boolean,System.String[])">
+            <summary>
+            Adds the specified class name(s) only when the specified condition is true.
+            </summary>
+        </member>
+        <member name="M:Build.Mvc.ClassNameExtensions.RemoveClassWhen``1(``0,System.Boolean,System.String)">
+            <summary>
+            Removes the specified class name only when the specified condition is true.
+            </summary>
+        </member>
+        <member name="F:Build.Mvc.UrlTarget.Blank">
+            <summary>
+            _blank - the target URL will open in a new window
+            </summary>
+        </member>
+        <member name="F:Build.Mvc.UrlTarget.Self">
+            <summary>
+            _self - the target URL will open in the same frame as it was clicked
+            </summary>
+        </member>
+        <member name="F:Build.Mvc.UrlTarget.Parent">
+            <summary>
+            _parent - the target URL will open in the parent frameset
+            </summary>
+        </member>
+        <member name="F:Build.Mvc.UrlTarget.Top">
+            <summary>
+            _top - the target URL will open in the full body of the window
+            </summary>
+        </member>
+        <member name="T:Build.Mvc.FormMethod">
+            <summary>
+            Defines the HTTP method for sending data to the action URL.
+            </summary>
+        </member>
+        <member name="F:Build.Mvc.FormMethod.Post">
+            <summary>
+            Sends the form-data as an HTTP post transaction
+            </summary>
+        </member>
+        <member name="F:Build.Mvc.FormMethod.Get">
+            <summary>
+            Appends the form-data to the URL: URL?name=value&amp;name=value
+            </summary>
+        </member>
+        <member name="F:Build.Mvc.FormMethod.Put">
+            <summary>
+            Sends the form-data as an HTTP put transaction
+            </summary>
+        </member>
+        <member name="F:Build.Mvc.FormMethod.Delete">
+            <summary>
+            Sends the form-data as an HTTP delete transaction
+            </summary>
+        </member>
+        <member name="M:Build.Mvc.Html.SrcExtensions.Src``1(``0,System.String)">
+            <summary>
+            Sets the [src] HTML attribute on the current builder.  This is the equivalent of calling Attr("src", UrlHelper.Content(url))
+            </summary>
+        </member>
+        <member name="M:Build.Mvc.Html.SelectListBuilderExtensions.OptionLabel``1(``0)">
+            <summary>
+            Gets the option label
+            </summary>
+        </member>
+        <member name="M:Build.Mvc.Html.SelectListBuilderExtensions.OptionLabel``1(``0,System.String)">
+            <summary>
+            Sets the option label (the default option with no value)
+            </summary>
+        </member>
+        <member name="M:Build.Mvc.Html.SelectListBuilderExtensions.ListSize``1(``0,System.Int32)">
+            <summary>
+            Sets the size property (how many vertical items are visible when closed)
+            </summary>
+            <typeparam name="TBuilder">The type of the builder.</typeparam>
+            <param name="instance">The instance.</param>
+            <param name="value">The value.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Build.Mvc.GenericDictionaryExtensions.Add``2(System.Collections.Generic.IDictionary{``0,``1},System.Collections.Generic.KeyValuePair{``0,``1})">
+            <summary>
+            Adds the specified entry to the dictionary
+            </summary>
+        </member>
+        <member name="M:Build.Mvc.GenericDictionaryExtensions.AddRange``2(System.Collections.Generic.IDictionary{``0,``1},System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{``0,``1}})">
+            <summary>
+            Iteratively adds values from the source dictionary to the target dictionary.  If the target dictionary already contains a key specified by an entry, it will be ignored.
+            </summary>
+        </member>
+        <member name="M:Build.Mvc.GenericDictionaryExtensions.AddRange``2(System.Collections.Generic.IDictionary{``0,``1},System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{``0,``1}},System.Boolean)">
+            <summary>
+            Iteratively adds values from the source dictionary to the target dictionary.
+            </summary>
+            <typeparam name="TKey">The type of the key.</typeparam>
+            <typeparam name="TValue">The type of the value.</typeparam>
+            <param name="dictionary">The dictionary.</param>
+            <param name="entries">The entries.</param>
+            <param name="replaceExisting">when <c>true</c>, an entry in the target dictionary will be replaced by the one from the source dictionary</param>
+        </member>
+        <member name="M:Build.Mvc.GenericDictionaryExtensions.AddValues(System.Collections.Generic.IDictionary{System.String,System.Object},System.Object)">
+            <summary>
+            Adds values to the target dictionary by iterating over the source object's properties.  Property names such as "data_icon" are not modified by this method.
+            </summary>
+        </member>
+        <member name="M:Build.Mvc.GenericDictionaryExtensions.Get``1(System.Collections.Generic.IDictionary{System.String,System.Object},System.String)">
+            <summary>
+            Gets the value of the specified key cast as type of TValue
+            </summary>
+        </member>
+        <member name="M:Build.Mvc.GenericDictionaryExtensions.Set``2(System.Collections.Generic.IDictionary{``0,``1},``0,``1)">
+            <summary>
+            Adds or replaces the specified key/value pair in the target dictionary.
+            </summary>
+        </member>
+        <member name="M:Build.Mvc.DataExtensions.Data``1(``0,System.String,System.Object)">
+            <summary>
+            Sets an Author defined attribute with the specified value. This method adds the "data-" prefix for you.
+            </summary>
+        </member>
+        <member name="M:Build.Mvc.DataExtensions.Data(Build.Mvc.IHtmlBuilderState,System.String)">
+            <summary>
+            Gets an Author defined attribute with the specified value as a string. This method adds the "data-" prefix for you.
+            </summary>
+        </member>
+        <member name="M:Build.Mvc.DataExtensions.Data``1(Build.Mvc.IHtmlBuilderState,System.String)">
+            <summary>
+            Gets an Author defined attribute with the specified value. This method adds the "data-" prefix for you.
+            </summary>
+        </member>
+        <member name="M:Build.Mvc.Html.ExpressionBuilderExtensions.Expression``1(``0)">
+            <summary>
+            Stores an expression property value
+            </summary>
+        </member>
+        <member name="M:Build.Mvc.Html.ExpressionBuilderExtensions.Expression``1(``0,System.String)">
+            <summary>
+            Gets the stored expression property value
+            </summary>
+        </member>
+        <member name="M:Build.Mvc.HtmlHelperContextExtensions.NewHelperContext``1(System.Web.Mvc.HtmlHelper{``0})">
+            <summary>
+            Creates a new scoped-HtmlHelper context that be used to initialize all builders with the BuilderState values from this instance.
+            </summary>
+        </member>
+        <member name="M:Build.Mvc.HtmlHelperContextExtensions.NewHelperContext(System.Web.Mvc.HtmlHelper)">
+            <summary>
+            Creates a new scoped-HtmlHelper context that be used to initialize all builders with the BuilderState values from this instance.
+            </summary>
+        </member>
+        <member name="P:Build.Mvc.Razor.IRazorHelper.Html">
+            <summary>
+            An instance of the Razor-specific HtmlHelper implementation.
+            </summary>
+        </member>
+        <member name="M:Build.Mvc.HtmlBuilderExtensions.Id(Build.Mvc.IHtmlBuilderState)">
+            <summary>
+            Gets the id attribute [Short for Attr("id")]
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Build.Mvc.HtmlBuilderExtensions.Id``1(``0,System.String)">
+            <summary>
+            Sets the id attribute [Short for Attr("id", value)]
+            </summary>
+            <typeparam name="TBuilder">The type of the builder.</typeparam>
+            <param name="instance">The instance.</param>
+            <param name="value">The value.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Build.Mvc.HtmlBuilderExtensions.Name(Build.Mvc.IHtmlBuilderState)">
+            <summary>
+            Gets the name attribute [Short for Attr("name")]
+            </summary>
+        </member>
+        <member name="M:Build.Mvc.HtmlBuilderExtensions.Tooltip``1(``0,System.String)">
+            <summary>
+            Sets the tooltip [Short for Attr("title", value)]
+            </summary>
+        </member>
+        <member name="M:Build.Mvc.HtmlBuilderExtensions.TabIndex``1(``0,System.Int32)">
+            <summary>
+            Sets the tab index [Short for Attr("tabindex", value)]
+            </summary>
+        </member>
+        <member name="M:Build.Mvc.HtmlBuilderExtensions.AccessKey``1(``0,System.String)">
+            <summary>
+            Sets the access key [Short for Attr("accesskey", value)]
+            </summary>
+        </member>
+        <member name="M:Build.Mvc.HtmlBuilderExtensions.Alt``1(``0,System.String)">
+            <summary>
+            Sets the access key [Short for Attr("alt", value)]
+            </summary>
+        </member>
+        <member name="M:Build.Mvc.HtmlBuilderExtensions.When``1(``0,System.Boolean,System.Action{``0})">
+            <summary>
+            Executes the specified <paramref name="conditionalAction"></paramref> only if the <paramref name="condition"></paramref> is <c>true</c>.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="instance">The instance.</param>
+            <param name="condition">if set to <c>true</c> the action is executed.</param>
+            <param name="conditionalAction">The conditional action.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Build.Mvc.HtmlBuilderExtensions.With``1(``0,System.Action{``0})">
+            <summary>
+            Executes the specified <paramref name="withAction"/> against the current instance and returns the resulting value
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="instance">The instance.</param>
+            <param name="withAction">The with action.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Build.Mvc.AutoCompleteExtensions.Autocomplete``1(``0,Build.Mvc.AutocompleteMode)">
+            <summary>
+            If "on" browsers can store the form's input values, to auto-fill the form if the user returns to the page. If "off" browsers should not store this information.
+            </summary>
+        </member>
+        <member name="M:Build.Mvc.AttrExtensions.Attr``1(``0,System.String,System.Object)">
+            <summary>
+            Sets the specified attribute name/value pair.
+            </summary>
+        </member>
+        <member name="M:Build.Mvc.AttrExtensions.Attr``1(``0,System.String)">
+            <summary>
+            Get the specified attribute value as a string.
+            </summary>
+        </member>
+        <member name="M:Build.Mvc.AttrExtensions.Attr``1(``0,System.Object)">
+            <summary>
+            Adds the values from an anonymous object to the builder's HTML Attribute collection.
+            </summary>
+        </member>
+        <member name="M:Build.Mvc.AttrExtensions.Attr``1(Build.Mvc.IHtmlAttributes,System.String)">
+            <summary>
+            Gets the specified attribute value.
+            </summary>
+        </member>
+        <member name="M:Build.Mvc.AttrExtensions.Attr``1(``0,System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Iteratively adds the values from the specified dictionary to the builder's HTML Attribute collection.  Existing keys will be replaced.
+            </summary>
+        </member>
+        <member name="M:Build.Mvc.AttrExtensions.AttrWhen``1(``0,System.Boolean,System.String,System.Object)">
+            <summary>
+            Sets the specified attribute name/value pair only when the specified <paramref name="condition"></paramref> is <c>true</c>.
+            </summary>
+        </member>
+        <member name="M:Build.Mvc.AttrExtensions.DefaultAttr``1(``0,System.String,System.Object)">
+            <summary>
+            Sets the specified attribute name/value pair only when it does not already exist.
+            </summary>
+        </member>
+        <member name="M:Build.Mvc.AttrExtensions.DefaultAttr``1(``0,System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Iteratively adds the values from the specified dictionary to the builder's HTML Attribute collection.  Existing keys will not be replaced.
+            </summary>
+        </member>
+        <member name="M:Build.Mvc.AttrExtensions.RemoveAttr``1(``0,System.String)">
+            <summary>
+            Removes the specified attribute name.
+            </summary>
+        </member>
+        <member name="M:Build.Mvc.AttrExtensions.RemoveAttrWhen``1(``0,System.Boolean,System.String)">
+            <summary>
+            Removes the specified attribute name/value pair only when the specified <paramref name="condition"></paramref> is <c>true</c>.
+            </summary>
+        </member>
+        <member name="M:Build.Mvc.PropExtensions.Prop``1(``0,System.String,System.Object)">
+            <summary>
+            Sets the specified instance data name/value pair.
+            </summary>
+        </member>
+        <member name="M:Build.Mvc.PropExtensions.DefaultProp``1(``0,System.String,System.Object)">
+            <summary>
+            Sets the specified data name/value pair only when it does not already exist.
+            </summary>
+        </member>
+        <member name="M:Build.Mvc.PropExtensions.RemoveProp``1(``0,System.String)">
+            <summary>
+            Removes the specified data from the instance data collection.
+            </summary>
+        </member>
+        <member name="M:Build.Mvc.PropExtensions.RemovePropWhen``1(``0,System.Boolean,System.String)">
+            <summary>
+            Remove the specified data name/value pair only when the specified <paramref name="condition"></paramref> is <c>true</c>.
+            </summary>
+        </member>
+        <member name="M:Build.Mvc.Aria.AriaExtensions.Aria``1(``0,System.String,System.Object)">
+            <summary>
+            Sets an ARIA- (Accessible Rich Internet Applications) prefixed HTML attribute
+            </summary>
+            <typeparam name="TBuilder">The type of the builder.</typeparam>
+            <param name="instance">The instance.</param>
+            <param name="name">One of the <see cref="T:Build.Mvc.Aria.AriaAttribute"/> constants or a custom value (This method will add the aria- prefix for you)</param>
+            <param name="value">The value</param>
+            <returns></returns>
+        </member>
+        <member name="M:Build.Mvc.Html.ButtonBuilderExtensions.Submit``1(``0)">
+            <summary>
+            Sets the type for this button to "submit"
+            </summary>
+            <typeparam name="TBuilder"></typeparam>
+            <param name="instance"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Build.Mvc.Html.ButtonBuilderExtensions.Icon``1(``0,System.String,Build.Mvc.IconPosition)">
+            <summary>
+            Adds a data-icon-primary or data-icon-scondary attribute to the control (for use with wiring up jquery-ui buttons)
+            </summary>
+            <typeparam name="TBuilder">The type of the builder.</typeparam>
+            <param name="instance">The instance.</param>
+            <param name="iconName">One of the <see cref="T:Build.Mvc.IconName"/> constants or a custom value</param>
+            <param name="position">The position.</param>
+        </member>
+        <member name="M:Build.Mvc.CssExtensions.DashifyCamelCaseStyleName(System.String)">
+            <summary>
+            Converts a propertyName similar to "paddingRight" into "padding-right"
+            </summary>
+        </member>
+        <member name="M:Build.Mvc.CssExtensions.Styles(System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Gets a collection of styles.
+            </summary>
+        </member>
+        <member name="M:Build.Mvc.CssExtensions.Css``1(``0,System.Object)">
+            <summary>
+            Sets the specified style properties.  This typically uses the object initializer syntax similar to: New {paddingRight = "1em"}
+            </summary>
+        </member>
+        <member name="M:Build.Mvc.CssExtensions.Css``1(``0,System.String,System.String)">
+            <summary>
+            Sets the specified style name and value.
+            </summary>
+        </member>
+        <member name="M:Build.Mvc.CssExtensions.Css``1(``0,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            Sets the specified style properties.
+            </summary>
+        </member>
+        <member name="M:Build.Mvc.CssExtensions.RemoveCss``1(``0,System.String)">
+            <summary>
+            Removes the specified CSS name.
+            </summary>
+        </member>
+        <member name="M:Build.Mvc.CssExtensions.CssWhen``1(``0,System.Boolean,System.String,System.String)">
+            <summary>
+            Sets the specified CSS style name only when the specified condition is true.
+            </summary>
+        </member>
+        <member name="M:Build.Mvc.CssExtensions.RemoveCssWhen``1(``0,System.Boolean,System.String)">
+            <summary>
+            Removes the specified CSS style name only when the specified condition is true.
+            </summary>
+        </member>
+        <member name="T:Build.Mvc.Aria.AriaAttribute">
+            <summary>
+            A list of valid ARIA (Accessible Rich Internet Applications) attributes
+            </summary>
+        </member>
+        <member name="T:Build.Mvc.Resource">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Build.Mvc.Resource.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Build.Mvc.Resource.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Build.Mvc.Resource.LoremIpsum">
+            <summary>
+              Looks up a localized string similar to UW0AAB+LCAAAAAAABADsvQdgHEmWJSYvbcp7f0r1StfgdKEIgGATJNiQQBDswYjN5pLsHWlHIymrKoHKZVZlXWYWQMztnbz33nvvvffee++997o7nU4n99//P1xmZAFs9s5K2smeIYCqyB8/fnwfPyJe1lWxTMtsum7SvK6aUTopJvlytl6kTdGm2SJvR+l5tp4WE2qRTUdpXubFObVI8/UoLas6X4zTn1gXzS9a5+m0Ws6KRb5s1/Th63WzonZF0+Tpohinx/kyz5YOGLojIGm2vljn41QwucxL6nZZNCVhUmb0ehtDZE1/NNUsK3P5PW/acfoiW6SXRZvl/P44PVum82xK/5/Qh8BiVWZtnqWzYkoI4o2fpPcIXkmjzZZtnharhn5d1cWiaNLCw7Wqp0Varuk9QrlN12VbF1Pqe1U167ymga8nRVlk6cm6zvLD9HU+S8/z9UWRtWldNGsepyD1RbamT1IaDn16TqMlklf1MiMgjPuIiLhYVLMqzWhc [rest of string was truncated]&quot;;.
+            </summary>
+        </member>
+        <member name="P:Build.Mvc.Resource.LoremIpsumList">
+            <summary>
+              Looks up a localized string similar to vA8AAB+LCAAAAAAABADsvQdgHEmWJSYvbcp7f0r1StfgdKEIgGATJNiQQBDswYjN5pLsHWlHIymrKoHKZVZlXWYWQMztnbz33nvvvffee++997o7nU4n99//P1xmZAFs9s5K2smeIYCqyB8/fnwfPyKeV3W+SItVs16ks6qs6rQp2jRb5O0onVbLJp+2ebvO6zSbFauimRbLizQvi3b8GydfVPWkSNdlWxfTIm/S87xe5MuWAJV5Rd+/WJdltkgvq3LdrrI2XWRNk6V5m7Z5Wa6bdDXP6ryts/RyXa7Wbdbm9NLTaplP02yaNoTWslrqW4TKrFDo9PtlVpZFQ82frZtpLoj+ojX1sSyaIm2yi6Jtiyati2aNVq/zWTgYAL8s2ixPZ+uCGryss7wh6Gl+kTdt1qQ0fsKwmKWrfAa0frK4zBZrjHF9UVA/KxoCtc+bX7TODT1eYLD5vJiuy8wjy5IwA4jjfJlny4COTatYAEJ6nq2nxQSdZNOChscDPG0L [rest of string was truncated]&quot;;.
+            </summary>
+        </member>
+        <member name="T:Build.Mvc.IconName">
+            <summary>
+            A list of valid JQuery UI icon class names
+            </summary>
+        </member>
+        <member name="M:Build.Mvc.Html5Extensions.Autofocus``1(``0)">
+            <summary>
+            HTML5 - The autofocus attribute specifies that a field should automatically get focus when a page is loaded.
+            </summary>
+        </member>
+        <member name="M:Build.Mvc.Html5Extensions.Required``1(``0)">
+            <summary>
+            HTML5 - When present, it specifies that an input field must be filled out before submitting the form.
+            </summary>
+        </member>
+        <member name="M:Build.Mvc.Html.ButtonExtensions.BuildButton(System.Web.Mvc.HtmlHelper,System.String)">
+            <summary>
+            Creates a builder for creating a &lt;button&gt; tag
+            </summary>
+        </member>
+        <member name="M:Build.Mvc.Html.ButtonExtensions.BuildButton(System.Web.Mvc.HtmlHelper,System.String,System.Action{Build.Mvc.Html.IButtonBuilder})">
+            <summary>
+            Creates a builder for creating a &lt;button&gt; tag
+            </summary>
+        </member>
+        <member name="M:Build.Mvc.Html.ButtonExtensions.BuildSubmitButton(System.Web.Mvc.HtmlHelper,System.String,System.Action{Build.Mvc.Html.IButtonBuilder})">
+            <summary>
+            Creates a builder for creating a &lt;button&gt; tag with [type="submit"]
+            </summary>
+        </member>
+        <member name="M:Build.Mvc.Html.ButtonExtensions.BuildSubmitButton(System.Web.Mvc.HtmlHelper,System.String)">
+            <summary>
+            Creates a builder for creating a &lt;button&gt; tag with [type="submit"]
+            </summary>
+        </member>
+        <member name="M:Build.Mvc.Html.ButtonExtensions.BuildInputButton(System.Web.Mvc.HtmlHelper,System.String)">
+            <summary>
+            Creates a builder for creating an &lt;input&gt; tag with [type="button"]
+            </summary>
+        </member>
+        <member name="M:Build.Mvc.Html.ButtonExtensions.BuildInputButton(System.Web.Mvc.HtmlHelper,System.String,System.Action{Build.Mvc.Html.IButtonBuilder})">
+            <summary>
+            Creates a builder for creating an &lt;input&gt; tag with [type="button"]
+            </summary>
+        </member>
+        <member name="M:Build.Mvc.Html.TextBoxBuilderExtensions.Format``1(``0,System.String)">
+            <summary>
+            Sets the format option of the Html.Textbox helper method.
+            </summary>
+        </member>
+        <member name="M:Build.Mvc.Html.TextBoxBuilderExtensions.Format``1(``0)">
+            <summary>
+            Gets the format option of the Html.Textbox helper method.
+            </summary>
+        </member>
+        <member name="M:Build.Mvc.Html.TextBoxBuilderExtensions.Max``1(``0,System.Object)">
+            <summary>
+            Sets the upper valid range.
+            </summary>
+            <typeparam name="TBuilder">The type of the builder.</typeparam>
+            <param name="instance">The instance.</param>
+            <param name="value">The value.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Build.Mvc.Html.TextBoxBuilderExtensions.Max``1(``0)">
+            <summary>
+            Gets the max attribute.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Build.Mvc.Html.TextBoxBuilderExtensions.MaxLength``1(``0)">
+            <summary>
+            Gets the maxlength attribute.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Build.Mvc.Html.TextBoxBuilderExtensions.MaxLength``1(``0,System.Int32)">
+            <summary>
+            Sets the max length.
+            </summary>
+            <typeparam name="TBuilder">The type of the builder.</typeparam>
+            <param name="instance">The instance.</param>
+            <param name="value">The value.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Build.Mvc.Html.TextBoxBuilderExtensions.Min``1(``0)">
+            <summary>
+            Gets the min attribute.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Build.Mvc.Html.TextBoxBuilderExtensions.Min``1(``0,System.Object)">
+            <summary>
+            Sets the lower valid range.
+            </summary>
+            <typeparam name="TBuilder">The type of the builder.</typeparam>
+            <param name="instance">The instance.</param>
+            <param name="value">The value.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Build.Mvc.Html.TextBoxBuilderExtensions.Minlength``1(``0)">
+            <summary>
+            Gets the minlength attribute.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Build.Mvc.Html.TextBoxBuilderExtensions.MinLength``1(``0,System.Int32)">
+            <summary>
+            Sets the minimum valid length.
+            </summary>
+            <typeparam name="TBuilder">The type of the builder.</typeparam>
+            <param name="instance">The instance.</param>
+            <param name="value">The value.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Build.Mvc.Html.TextBoxBuilderExtensions.Mode``1(``0)">
+            <summary>
+            Gets the <see cref="T:System.Web.UI.WebControls.TextBoxMode"/> property
+            </summary>
+        </member>
+        <member name="M:Build.Mvc.Html.TextBoxBuilderExtensions.Multiline``1(``0)">
+            <summary>
+            Sets the render mode to Multiline.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Build.Mvc.Html.TextBoxBuilderExtensions.Multiline``1(``0,System.Int32,System.Int32)">
+            <summary>
+            Sets the render mode to Multiline.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Build.Mvc.Html.TextBoxBuilderExtensions.Password``1(``0)">
+            <summary>
+            Sets the render mode to Password.
+            </summary>
+        </member>
+        <member name="M:Build.Mvc.Html.TextBoxBuilderExtensions.Pattern``1(``0)">
+            <summary>
+            Gets the pattern attribute.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Build.Mvc.Html.TextBoxBuilderExtensions.Pattern``1(``0,System.String)">
+            <summary>
+            Requires that the text box value match the specified regular expression pattern.
+            Example: "^\d{3}\-\d{2}\-\d{4}$" would match a social security number.
+            </summary>
+            <typeparam name="TBuilder">The type of the builder.</typeparam>
+            <param name="instance">The instance.</param>
+            <param name="value">The value.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Build.Mvc.Html.TextBoxBuilderExtensions.Placeholder``1(``0,System.String)">
+            <summary>
+            Sets the specified placeholder text.
+            </summary>
+        </member>
+        <member name="M:Build.Mvc.Html.TextBoxBuilderExtensions.Placeholder``1(``0)">
+            <summary>
+            Gets the specified placeholder text.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Build.Mvc.Html.TextBoxBuilderExtensions.Singleline``1(``0)">
+            <summary>
+            Sets the render mode to Singleline.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Build.Mvc.Html.TextBoxBuilderExtensions.Size``1(``0,System.Int32)">
+            <summary>
+            Sets the textbox size. [Short for Attr("size", value)]
+            </summary>
+            <typeparam name="TBuilder">The type of the builder.</typeparam>
+            <param name="instance">The instance.</param>
+            <param name="value">The value.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Build.Mvc.Html.TextBoxBuilderExtensions.Size``1(``0,System.Int32,System.Int32)">
+            <summary>
+            Sets the textarea size. [Short for Attr("rows", rows).Attr("cols", cols)]
+            </summary>
+            <typeparam name="TBuilder">The type of the builder.</typeparam>
+            <param name="instance">The instance.</param>
+            <param name="rows">The rows.</param>
+            <param name="columns">The columns.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Build.Mvc.Html.TextBoxBuilderExtensions.Step``1(``0,System.Object)">
+            <summary>
+            Sets the textbox step. [Short for Attr("step", value)]
+            </summary>
+            <typeparam name="TBuilder">The type of the builder.</typeparam>
+            <param name="instance">The instance.</param>
+            <param name="value">The value.</param>
+            <returns></returns>
+        </member>
+        <member name="F:Build.Mvc.DraggableMode.Auto">
+            <summary>
+            Specifies that the element should be draggable if the parent element is
+            </summary>
+        </member>
+        <member name="F:Build.Mvc.DraggableMode.On">
+            <summary>
+            Specifies that the element is draggable
+            </summary>
+        </member>
+        <member name="F:Build.Mvc.DraggableMode.Off">
+            <summary>
+            Specifies that the element in not draggable
+            </summary>
+        </member>
+        <member name="M:Build.Mvc.Html.ValidationBuilderExtensions.ModelName``1(``0)">
+            <summary>
+            Gets the modelName property
+            </summary>
+        </member>
+        <member name="M:Build.Mvc.Html.ValidationBuilderExtensions.ModelName``1(``0,System.String)">
+            <summary>
+            Sets the modelName property
+            </summary>
+        </member>
+        <member name="M:Build.Mvc.Html.ValidationBuilderExtensions.Message``1(``0)">
+            <summary>
+            Gets the ValidationMessage property
+            </summary>
+        </member>
+        <member name="M:Build.Mvc.Html.ValidationBuilderExtensions.Message``1(``0,System.String)">
+            <summary>
+            Sets the ValidationMessage property
+            </summary>
+        </member>
+        <member name="M:Build.Mvc.Html.ValidationBuilderExtensions.ExcludePropertyErrors``1(``0)">
+            <summary>
+            Gets the ExcludePropertyErrors property
+            </summary>
+        </member>
+        <member name="M:Build.Mvc.Html.ValidationBuilderExtensions.ExcludePropertyErrors``1(``0,System.Boolean)">
+            <summary>
+            Sets the ExcludePropertyErrors property
+            </summary>
+        </member>
+    </members>
+</doc>

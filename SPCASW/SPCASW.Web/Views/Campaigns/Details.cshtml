@@ -1,0 +1,54 @@
+﻿@using System.Collections
+@using System.Data
+@using Kendo.Mvc.UI
+@model SPCASW.Web.Models.CampaignViewModel
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Campaign Details</h2>
+@using (Html.BeginForm())
+{
+   <label>Campaign name:</label>
+   if (Model.Campaign.CampaignName != null)
+   {
+      @Html.Label(Model.Campaign.CampaignName)
+   }
+@*   <label>Created on:</label>
+   @Html.Label(Model.CreatedOnForDisplay);
+*@
+   if (Model.Contacts != null && Model.Contacts.Count > 0)
+   {
+      <p>Contacts included in this campaign:</p>
+      @(Html.Kendo().Grid(Model.Contacts)
+         .Name("Grid")
+         .Columns(columns =>
+         {
+            columns.Bound(p => p.FirstName).Title("First Name");
+            columns.Bound(p => p.LastName).Title("Last Name");
+            columns.Bound(p => p.EmailAddress).Title("Email");
+		      columns.Bound("IsAdopter").ClientTemplate("<input type='checkbox' #= IsAdopter ? checked='checked' : '' # ></input>");
+ 		      columns.Bound("IsDonor").ClientTemplate("<input type='checkbox' #= IsDonor ? checked='checked' : '' # ></input>");
+      		columns.Bound("IsVolunteer").ClientTemplate("<input type='checkbox' #= IsVolunteer ? checked='checked' : '' # ></input>");
+
+         }).Resizable(resize => resize.Columns(true))
+                    .Scrollable()
+                    .Pageable()
+                    .DataSource(dataSource => dataSource
+                    .Server()
+                    .Model(model => model.Id(p => p.ContactID))
+                    .Read(read => read.Action("Details", "Campaigns"))
+                    )
+                  )
+   } //end if
+   else
+   {
+      <p>There are no contacts associated with this campaign.</p> 
+   }
+   <div class="k-button k-button-icontext k-grid-update">
+      @Html.ActionLink("CVS Export", "ExportCsv", new { id = Model.Campaign.CampaignID }, new { @class = "actionLinkButton" })
+   </div>
+
+}
+

@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="9cfaf67d-a704-480c-a64b-20e9b66ad76f" name="A27A7WT@ARISTOTLE 2012-10-27 18:52:39" runUser="GEAEAVSYS\A27A7WT" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Default Test Settings" id="5fa127c4-5312-446c-8126-800aaa6bc244">
+    <Deployment runDeploymentRoot="A27A7WT_ARISTOTLE 2012-10-27 18_52_39">
+      <DeploymentItem filename="D:\SPCASW\SPCASW\packages\EntityFramework.4.1.10331.0\lib\EntityFramework.dll" />
+      <DeploymentItem filename="D:\SPCASW\SPCASW\SPCASW.Data\bin\Debug\SPCASW.Data.dll" />
+      <DeploymentItem filename="D:\SPCASW\SPCASW\SPCASW.Common\bin\Debug\SPCASW.Common.dll" />
+      <DeploymentItem filename="D:\SPCASW\SPCASW\SPCASW.Marketing\bin\Debug\SPCASW.Marketing.dll" />
+      <DeploymentItem filename="D:\SPCASW\SPCASW\SPCASW.PetPoint\bin\Debug\SPCASW.PetPoint.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2012-10-27T18:52:39.2405955-04:00" queuing="2012-10-27T18:52:41.4089993-04:00" start="2012-10-27T18:52:41.6273997-04:00" finish="2012-10-27T18:53:03.4986381-04:00" />
+  <ResultSummary outcome="Completed">
+    <Counters total="1" executed="1" passed="1" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="LoadData" storage="d:\spcasw\spcasw\spcasw.tests\bin\debug\spcasw.tests.dll" id="12a5c15c-67f7-d728-c2f3-ae15c1da0fe4">
+      <Execution id="8a08057b-750e-4a5d-9204-5e4236cafdb5" />
+      <TestMethod codeBase="D:/SPCASW/SPCASW/SPCASW.Tests/bin/Debug/SPCASW.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="SPCASW.Tests.Controllers.LoadPetPointData, SPCASW.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="LoadData" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="12a5c15c-67f7-d728-c2f3-ae15c1da0fe4" executionId="8a08057b-750e-4a5d-9204-5e4236cafdb5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="8a08057b-750e-4a5d-9204-5e4236cafdb5" testId="12a5c15c-67f7-d728-c2f3-ae15c1da0fe4" testName="LoadData" computerName="ARISTOTLE" duration="00:00:18.3346632" startTime="2012-10-27T18:52:41.8458001-04:00" endTime="2012-10-27T18:53:01.7514350-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8a08057b-750e-4a5d-9204-5e4236cafdb5">
+    </UnitTestResult>
+  </Results>
+</TestRun>

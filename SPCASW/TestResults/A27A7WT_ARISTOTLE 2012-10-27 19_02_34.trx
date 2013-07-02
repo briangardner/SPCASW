@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="3c789f1f-e45e-479e-86e8-1dab9e7f76c0" name="A27A7WT@ARISTOTLE 2012-10-27 19:02:34" runUser="GEAEAVSYS\A27A7WT" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Default Test Settings" id="0e41c945-d66e-4c59-8daa-c00d0a0d94db">
+    <Deployment runDeploymentRoot="A27A7WT_ARISTOTLE 2012-10-27 19_02_34">
+      <DeploymentItem filename="D:\SPCASW\SPCASW\packages\EntityFramework.4.1.10331.0\lib\EntityFramework.dll" />
+      <DeploymentItem filename="D:\SPCASW\SPCASW\SPCASW.Data\bin\Debug\SPCASW.Data.dll" />
+      <DeploymentItem filename="D:\SPCASW\SPCASW\SPCASW.Common\bin\Debug\SPCASW.Common.dll" />
+      <DeploymentItem filename="D:\SPCASW\SPCASW\SPCASW.Marketing\bin\Debug\SPCASW.Marketing.dll" />
+      <DeploymentItem filename="D:\SPCASW\SPCASW\SPCASW.PetPoint\bin\Debug\SPCASW.PetPoint.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2012-10-27T19:02:34.6322763-04:00" queuing="2012-10-27T19:02:37.1069954-04:00" start="2012-10-27T19:02:37.3230078-04:00" finish="2012-10-27T19:03:20.8613531-04:00" />
+  <ResultSummary outcome="Error">
+    <Counters total="1" executed="1" error="0" failed="0" timeout="0" aborted="1" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" passed="0" completed="0" inProgress="0" pending="0" />
+    <RunInfos>
+      <RunInfo computerName="ARISTOTLE" outcome="Error" timestamp="2012-10-27T19:03:20.8145530-04:00">
+        <Text>Test host process exited unexpectedly.</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="LoadData" storage="d:\spcasw\spcasw\spcasw.tests\bin\debug\spcasw.tests.dll" id="12a5c15c-67f7-d728-c2f3-ae15c1da0fe4">
+      <Execution id="fa0fe10b-36d0-4b29-b0f4-df7b6c490938" />
+      <TestMethod codeBase="D:/SPCASW/SPCASW/SPCASW.Tests/bin/Debug/SPCASW.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="SPCASW.Tests.Controllers.LoadPetPointData, SPCASW.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="LoadData" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="12a5c15c-67f7-d728-c2f3-ae15c1da0fe4" executionId="fa0fe10b-36d0-4b29-b0f4-df7b6c490938" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="fa0fe10b-36d0-4b29-b0f4-df7b6c490938" testId="12a5c15c-67f7-d728-c2f3-ae15c1da0fe4" testName="LoadData" computerName="ARISTOTLE" duration="00:00:43.3223330" startTime="2012-10-27T19:02:37.5390201-04:00" endTime="2012-10-27T19:03:20.8613531-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Aborted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="fa0fe10b-36d0-4b29-b0f4-df7b6c490938">
+    </UnitTestResult>
+  </Results>
+</TestRun>

@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SPCASWCommonStoreContainer" CdmEntityContainer="SPCAContactsEntities">
+    <EntitySetMapping Name="CampaignRecipients">
+      <EntityTypeMapping TypeName="SPCASW.Common.CampaignRecipient">
+        <MappingFragment StoreEntitySet="CampaignRecipients">
+          <ScalarProperty Name="CampaignRecipientID" ColumnName="CampaignRecipientID" />
+          <ScalarProperty Name="CampaignID" ColumnName="CampaignID" />
+          <ScalarProperty Name="ContactID" ColumnName="ContactID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Campaigns">
+      <EntityTypeMapping TypeName="SPCASW.Common.Campaign">
+        <MappingFragment StoreEntitySet="Campaigns">
+          <ScalarProperty Name="CampaignID" ColumnName="CampaignID" />
+          <ScalarProperty Name="CampaignName" ColumnName="CampaignName" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Contacts">
+      <EntityTypeMapping TypeName="SPCASW.Common.Contact">
+        <MappingFragment StoreEntitySet="Contacts">
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="PhoneType4" ColumnName="PhoneType4" />
+          <ScalarProperty Name="Phone4" ColumnName="Phone4" />
+          <ScalarProperty Name="PhoneType3" ColumnName="PhoneType3" />
+          <ScalarProperty Name="Phone3" ColumnName="Phone3" />
+          <ScalarProperty Name="PhoneType2" ColumnName="PhoneType2" />
+          <ScalarProperty Name="Phone2" ColumnName="Phone2" />
+          <ScalarProperty Name="PhoneType1" ColumnName="PhoneType1" />
+          <ScalarProperty Name="Phone1" ColumnName="Phone1" />
+          <ScalarProperty Name="StreetAddress2" ColumnName="StreetAddress2" />
+          <ScalarProperty Name="StreetAddress1" ColumnName="StreetAddress1" />
+          <ScalarProperty Name="ContactID" ColumnName="ContactID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="IsVolunteer" ColumnName="IsVolunteer" />
+          <ScalarProperty Name="IsDonor" ColumnName="IsDonor" />
+          <ScalarProperty Name="IsAdopter" ColumnName="IsAdopter" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="StateCode" ColumnName="StateCode" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="IsEmailAllowed" ColumnName="IsEmailAllowed" />
+          <ScalarProperty Name="IsMailAllowed" ColumnName="IsMailAllowed" />
+          <ScalarProperty Name="IsMailAddressValid" ColumnName="IsMailAddressValid" />
+          <ScalarProperty Name="PetPointID" ColumnName="PetPointID" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Contacts_temp">
+      <EntityTypeMapping TypeName="SPCASW.Common.Contacts_temp">
+        <MappingFragment StoreEntitySet="Contacts_temp">
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="PetPointID" ColumnName="PetPointID" />
+          <ScalarProperty Name="IsMailAddressValid" ColumnName="IsMailAddressValid" />
+          <ScalarProperty Name="IsMailAllowed" ColumnName="IsMailAllowed" />
+          <ScalarProperty Name="IsEmailAllowed" ColumnName="IsEmailAllowed" />
+          <ScalarProperty Name="PhoneType4" ColumnName="PhoneType4" />
+          <ScalarProperty Name="Phone4" ColumnName="Phone4" />
+          <ScalarProperty Name="PhoneType3" ColumnName="PhoneType3" />
+          <ScalarProperty Name="Phone3" ColumnName="Phone3" />
+          <ScalarProperty Name="PhoneType2" ColumnName="PhoneType2" />
+          <ScalarProperty Name="Phone2" ColumnName="Phone2" />
+          <ScalarProperty Name="PhoneType1" ColumnName="PhoneType1" />
+          <ScalarProperty Name="Phone1" ColumnName="Phone1" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="StateCode" ColumnName="StateCode" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="StreetAddress2" ColumnName="StreetAddress2" />
+          <ScalarProperty Name="StreetAddress1" ColumnName="StreetAddress1" />
+          <ScalarProperty Name="IsAdopter" ColumnName="IsAdopter" />
+          <ScalarProperty Name="IsDonor" ColumnName="IsDonor" />
+          <ScalarProperty Name="IsVolunteer" ColumnName="IsVolunteer" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="ContactID" ColumnName="ContactID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,7 @@
+D:\SPCASW\SPCASW\SPCASW.Common\bin\Debug\SPCASW.Common.dll.config
+D:\SPCASW\SPCASW\SPCASW.Common\bin\Debug\SPCASW.Common.dll
+D:\SPCASW\SPCASW\SPCASW.Common\bin\Debug\SPCASW.Common.pdb
+D:\SPCASW\SPCASW\SPCASW.Common\obj\Debug\SPCASW.Common.dll
+D:\SPCASW\SPCASW\SPCASW.Common\obj\Debug\SPCASW.Common.pdb
+D:\SPCASW\SPCASW\SPCASW.Common\bin\Debug\EntityFramework.dll
+D:\SPCASW\SPCASW\SPCASW.Common\bin\Debug\EntityFramework.xml

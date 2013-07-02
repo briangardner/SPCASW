@@ -1,0 +1,197 @@
+﻿@model SPCASW.Common.Contact
+@{
+    ViewBag.Title = "Details";
+}
+<div class="cf">
+    <h4>
+        Contact Information</h4>
+</div>
+<div class="cf">
+    <div class="fl" style="width: 49%">
+        <div class="editor-label">
+            First Name:</div>
+        <div class="editor-field">
+            @Model.FirstName
+        </div>
+        <div class="editor-label">
+            Last Name:
+        </div>
+        <div class="editor-field">
+            @Model.LastName
+        </div>
+        <div class="editor-label">
+            Address 1:
+        </div>
+        <div class="editor-field">
+            @Model.StreetAddress1
+        </div>
+        <div class="editor-label">
+            Address 2:
+        </div>
+        <div class="editor-field">
+            @Model.StreetAddress2
+        </div>
+        <div class="editor-label">
+            City:
+        </div>
+        <div class="editor-field">
+            @Model.City
+        </div>
+        <div class="editor-label">
+            State:
+        </div>
+        <div class="editor-field">
+            @Model.StateCode
+        </div>
+        <div class="editor-label">
+            Postal Code:
+        </div>
+        <div class="editor-field">
+            @Model.PostalCode
+        </div>
+    </div>
+    <div class="fl" style="width: 49%">
+        <div class="editor-label">
+            Email:
+        </div>
+        <div class="editor-field">
+            @Model.EmailAddress
+        </div>
+        @if(!string.IsNullOrEmpty(Model.Phone1))
+        {
+            <div class="editor-label">
+                @Model.PhoneType1:
+            </div>
+            <div class="editor-field">
+                @Model.Phone1
+            </div>
+        }
+        @if(!string.IsNullOrEmpty(Model.Phone2))
+        {
+            <div class="editor-label">
+                @Model.PhoneType2:
+            </div>
+            <div class="editor-field">
+                @Model.Phone2
+            </div>
+        }
+        @if(!string.IsNullOrEmpty(Model.Phone3))
+        {
+            <div class="editor-label">
+                @Model.PhoneType3:
+            </div>
+            <div class="editor-field">
+                @Model.Phone3
+            </div>
+        }
+        @if(!string.IsNullOrEmpty(Model.Phone4))
+        {
+            <div class="editor-label">
+                @Model.PhoneType4:
+            </div>
+            <div class="editor-field">
+                @Model.Phone4
+            </div>
+        }
+        <div class="editor-label">
+        </div>
+        <div class="editor-field">
+            @if(Model.IsEmailAllowed)
+            {
+                <span class="green">Email is allowed</span>
+            }
+            else
+            {
+                <span class="red">Email is not allowed</span>
+            }
+        </div>
+        <div class="editor-label">
+        </div>
+        <div class="editor-field">
+            @if(Model.IsEmailAllowed)
+            {
+                <span class="green">Mail is allowed</span>
+            }
+            else
+            {
+                <span class="red">Mail is not allowed</span>
+            }
+        </div>
+        <div class="editor-label">
+        </div>
+        <div class="editor-field">
+            @if(!Model.IsMailAddressValid)
+            {
+                <span class="red">Bad mailing address!</span>
+            }
+        </div>
+    </div>
+</div>
+<div class="cf">
+    <div class="fl" style="width: 49%">
+        <div class="editor-label">
+            Is a/an:
+        </div>
+        <div class="editor-field">
+            @{
+                var adv = new List<string>();
+                if(Model.IsAdopter)
+                {
+                    adv.Add("Adopter");
+                }
+                if(Model.IsDonor)
+                {
+                    adv.Add("Donor");
+                }
+                if(Model.IsVolunteer)
+                {
+                    adv.Add("Volunteer");
+                }
+                @String.Join(", ", adv)
+            }
+        </div>
+        <div class="editor-label">
+            PetPoint ID:
+        </div>
+        <div class="editor-field">
+            @Model.PetPointID
+        </div>
+        <div class="editor-label">
+            Created
+        </div>
+        <div class="editor-field">
+            @Model.CreatedOn by
+            @if(Model.CreatedBy.HasValue)
+            {
+                var creator = Membership.GetUser(Model.CreatedBy);
+                @(creator != null ? creator.UserName : "Unknown")
+            }
+            else
+            {
+                <text>Unknown</text>
+            }
+        </div>
+        <div class="editor-label">
+            Modified
+        </div>
+        <div class="editor-field">
+            @Model.ModifiedOn by
+            @if(Model.ModifiedBy.HasValue)
+            {
+                var modifier = Membership.GetUser(Model.ModifiedBy);
+                @(modifier != null ? modifier.UserName : "Unknown")
+            }
+            else
+            {
+                <text>Unknown</text>
+            }
+        </div>
+        <div class="editor-label">
+            Notes:
+        </div>
+        <div class="editor-field">
+            @Model.Notes
+        </div>
+    </div>
+</div>
+<hr />

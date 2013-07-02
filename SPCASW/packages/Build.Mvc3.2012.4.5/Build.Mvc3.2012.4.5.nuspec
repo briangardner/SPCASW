@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>Build.Mvc3</id>
+    <version>2012.4.5</version>
+    <title>Build.Mvc for MVC3</title>
+    <authors>grcodemonkey</authors>
+    <owners>grcodemonkey</owners>
+    <projectUrl>http://buildmvc.codeplex.com/</projectUrl>
+    <iconUrl>http://download.codeplex.com/Download?ProjectName=buildmvc&amp;DownloadId=317955</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Build.Mvc is a helper extensions method library that turns the standard ASP .NET MVC 3.0 HtmlHelper methods into jQuery-style chainable methods that allow you to expressively add markup and style to your MVC application.</description>
+    <releaseNotes>No longer HTML encoding value of button when using button builder</releaseNotes>
+    <tags>MVC,HtmlHelper,jQuery,.Net4,knockout.js,ReSharper</tags>
+  </metadata>
+</package>

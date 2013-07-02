@@ -1,0 +1,33 @@
+﻿@using Kendo.Mvc.UI
+@using SPCASW.Web.Models
+@{
+	ViewBag.Title = TempData["ViewBag.Title"] ?? "Invalid Mailing Addresses";
+	ViewBag.Message = "These contacts have been flagged as having some kind of problem with their mailing addresses.";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<p>
+	@ViewBag.Message
+</p>
+
+@(Html.Kendo().Grid<Import_ContactViewModel>()
+	.Name("Grid")
+	.Columns(columns =>
+	{
+		columns.Bound(o => o.ContactID).ClientTemplate("<a href='" + Url.Content("~/Contacts/Details/") + "#=ContactID#' target='_blank' class='k-button'>#=ContactID#</a>");
+		columns.Bound(o => o.FirstName).Title("First Name");
+		columns.Bound(o => o.LastName).Title("Last Name");
+		columns.Bound(o => o.Email);
+		columns.Bound(o => o.Zip);
+	})
+	.DataSource(dataSource => dataSource
+		.Ajax()
+		.Read(o => o.Action("ImportFileSuccess_Select", "Import"))
+		.Sort(sort => { sort.Add(o => o.ContactID).Descending(); })
+	)
+	.Sortable()
+	.Filterable()
+	.Pageable()
+)

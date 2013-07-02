@@ -1,0 +1,88 @@
+﻿@using System.Collections
+@using System.Data
+@using Kendo.Mvc.UI
+@using SPCASW.Web.Models
+@{
+	ViewBag.Title = "Contacts";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h4>
+	Contacts</h4>
+@if (TempData["Error"] != null)
+{
+	<div>
+		<label style="color: red">
+			@TempData["Error"]
+		</label>
+	</div>
+}
+@if (TempData["Info"] != null)
+{
+	<div>
+		<label style="color: green">
+			@TempData["Info"]
+		</label>
+	</div>
+}
+<div class="k-state-error" id="errors" style="display: none">
+</div>
+@(Html.Kendo().Grid<Contacts_ContactViewModel>()
+	.Name("Grid")
+	.Columns(columns =>
+	{
+		columns.Bound("ContactID").Title("").ClientTemplate("<a href='" + Url.Content("~/Contacts/Details/") + "#=ContactID#' class='k-button'>Details</a>").Width(100).Filterable(false);
+		columns.Bound("FirstName").Title("FirstName");
+		columns.Bound("LastName").Title("LastName");
+		columns.Bound("EmailAddress").Title("Email");
+		columns.Bound("IsAdopter").ClientTemplate("<input type='checkbox' #= IsAdopter ? checked='checked' : '' # ></input>");
+		columns.Bound("IsDonor").ClientTemplate("<input type='checkbox' #= IsDonor ? checked='checked' : '' # ></input>");
+		columns.Bound("IsVolunteer").ClientTemplate("<input type='checkbox' #= IsVolunteer ? checked='checked' : '' # ></input>");
+	})
+	.Resizable(resize => resize.Columns(true))
+	.ToolBar(toolbar => toolbar.Create().Text("Add new contact..."))
+	.Editable(editable => editable
+		.Mode(GridEditMode.PopUp)
+		.Window(w => w.HtmlAttributes(new { style = "padding:30px" })
+		.Draggable(false)
+		.Title("Add new contact")))
+	.Pageable()
+	.Sortable()
+	.Filterable()
+	.DataSource(dataSource => dataSource
+		.Ajax()
+		.Model(model =>
+		{
+			model.Id(p => p.ContactID);
+		})
+		.Read(read => read.Action("Select", "Contacts"))
+		.Create(update => update.Action("Create", "Contacts"))
+		.Update("Update", "Contacts")
+		.Events(events => events.Error("dataSource_error").Change("dataSource_change"))
+	)
+)
+<script type="text/javascript">
+	$(document).ready(function () {
+		$("form.k-edit-form").kendoValidator();
+
+		$('.k-grid-delete').click(function (e) {
+			if (!confirm('Are you sure you want to delete this record?')) {
+				e.preventDefault();
+				return;
+			}
+		});
+
+		$('.k-window').removeAttr('style');
+		$('.k-window').attr('style', 'height: 400px; width: 500px;z-index: 10003; position: fixed; top: 10%; left: 50%; margin-top: -30px; margin-left: -250px;');
+
+	});
+
+	function dataSource_error(e) {
+		$('#Grid').data('kendoGrid').cancelChanges();
+		$("#errors").html(e.responseText).show();
+	}
+
+	function dataSource_change() {
+		$("#errors").hide();
+	}
+
+</script>

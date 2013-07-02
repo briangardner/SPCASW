@@ -1,0 +1,27 @@
+@model SPCASW.Web.Models.ImportFileModel
+           
+@{
+    ViewBag.Title = "Import File";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Import File</h2>
+
+@*<form action="ImportFile" method="post" enctype="multipart/form-data">*@
+@using (Html.BeginForm(null, null, System.Web.Mvc.FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.ValidationSummary(true, "File Import was unsuccessful.  Please correct the errors and try again.")
+    <div >
+        <fieldset>
+            <legend>File</legend>
+                <div style="margin:0 auto">
+                    @Html.ValidationMessageFor(m => m.File)
+                    <br />
+                    <label for="file">Filename:</label>
+                    <input type="file" class="k-button k-button-icontext k-grid-add" name="file" id="file" />
+                    <input type="submit" class="k-button k-button-icontext k-grid-add" name="submit" value="Submit" style="padding-left:10px"/>
+                </div>
+        </fieldset>
+    </div>
+}
+@*</form>*@
